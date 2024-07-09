@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!--
+    The page_title contains the title for a page as shown in the navigation.
+    Site name contains the name as defined in the mkdocs.yml
+  -->
+  <title>mysql - 红队命令速查</title>
+
+  <!-- Page description -->
+  
+
+  <!-- Redirect -->
+  
+
+  <!-- Page author -->
+  
+  <!--
+    Just add a favicon.ico image to the docs.
+  -->
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  <link rel="stylesheet" href="../../css/colors.css">
+  <link rel="stylesheet" href="../../css/bundle.css">
+  <link rel="stylesheet" href="../../css/theme.css">
+  <link media="print" onload="this.media='all'" rel="stylesheet" href="../../css/atom-dark-one.min.css">
+  <!--
+    extra_ess contains paths to CSS files in the users
+    documentation directory or a list of CSS files defined in
+    their mkdocs.yml.
+
+    http://www.mkdocs.org/user-guide/configuration/#extra_css
+  -->
+  
+
+  
+  
+
+  <!--
+    Include Google Analytics tracking code.
+
+    http://www.mkdocs.org/user-guide/configuration/#google_analytics
+  -->
+  
+
+</head>
+
+<body>
+<input id="dark-mode" type="checkbox" />
+<!--
+  The JS has to be loaded here for maximum performance, right after the #dark-mode
+-->
+<script src="../../js/theme.js"></script>
+<div class="app-body">
+  <!-- KPN STYLE Beginning -->
+  <div class="app-layout ">
+    <!-- Top Bar -->
+    <nav class="app-layout__top-bar top-bar">
+      <a class="top-bar__logo" href="https://forum.ywhack.com/command/">
+        <img alt="KPN Logo" src="../../img/logo.svg" />
+      </a>
+      <div class="top-bar__title">红队命令速查</div>
+      <ul class="top-bar__menu">
+        <!--
+          Create a search form that sends the user to the search.html file - this is
+          the other file in the template which adds search to the theme. The only
+          requirement here is that there is a text input with the name 'q' and the
+          action and methods match below.
+        -->
+          <li class="top-bar__item">
+
+            <span role="search" id="search-input-wrapper">
+              <form action="../../search.html" method="get">
+                <input type="text" class="input" id="search-input" name="q" placeholder="Search..." />
+              </form>
+            </span >
+          </li>
+        <!--
+          Versioning support
+        -->
+        
+        <!--
+          Support repo URL
+        -->
+        <li class="top-bar__item">
+          
+        </li>
+
+        <li class="top-bar__item">
+            <label class="top-bar__link" id="label-dark-mode" for="dark-mode" title="Dark mode">
+              <svg alt="dark mode" width="24" height="24">
+                <image xlink:href="../../img/ui-bulb.svg" width="24" height="24"/>
+            </svg>
+            </label>
+        </li>
+        <li class="top-bar__item top-bar__item--trigger"></li>
+
+        <!-- <li class="top-bar__item">
+
+          <a class="top-bar__link top-bar__link--active">Home</a>
+        </li>
+        <li class="top-bar__item"><a class="top-bar__link">Information</a></li>
+        <li class="top-bar__item">
+          <a class="top-bar__link top-bar__link--collapsed">Getting Started</a>
+
+        </li>
+        <li class="top-bar__item top-bar__item--trigger">Menu</li> -->
+      </ul>
+    </nav>
+
+    <!--
+      Create the navigation for the documentation.
+
+      Because we don't know how many levels deep the navigation is, it needs to
+      be included in it's own file so it can be recursive. Otherwise the theme
+      can also only support a specific number of levels.
+
+      See the nav.html file for more details about how this works.
+    -->
+    <nav class="app-layout__side-bar side-bar">
+      <div class="side-bar__action-bar">
+        <a class="side-bar__link" href="/">红队命令速查</a>
+        <!--
+          Versioning support
+        -->
+        
+        <button class="side-bar__close"></button>
+      </div>
+      <ul class="side-bar__menu">
+        
+          <!--
+
+-->
+
+<li>
+  <a href="../.." class="side-bar__link ">
+    介绍
+  </a>
+</li>
+
+
+        
+          <!--
+
+-->
+
+<li>
+  <a href="../../Linux%20%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/" class="side-bar__link ">
+    Linux 命令速查
+  </a>
+</li>
+
+
+        
+          <!--
+
+-->
+
+<li>
+  <a href="../../Windows%20%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/" class="side-bar__link ">
+    Windows 命令速查
+  </a>
+</li>
+
+
+        
+          <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--expanded">
+      工具使用命令速查
+    </span>
+    <ul class="side-bar__sub-menu side-bar__sub-menu--visible">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/mimikatz/" class="side-bar__link ">
+    mimikatz
+  </a>
+</li>
+
+
+        
+    </ul>
+  </li>
+
+
+        
+          <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--expanded side-bar__link--active">
+      数据库命令速查
+    </span>
+    <ul class="side-bar__sub-menu side-bar__sub-menu--visible">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../Oracle/" class="side-bar__link ">
+    oracle
+  </a>
+</li>
+
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="./" class="side-bar__link side-bar__link--active">
+    mysql
+  </a>
+</li>
+
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../postgresql/" class="side-bar__link ">
+    postgresql
+  </a>
+</li>
+
+
+        
+    </ul>
+  </li>
+
+
+        
+      </ul>
+    </nav>
+
+    <!-- MAIN BLOCK -->
+    <main class="app-layout__main main">
+      <div class="app-layout__title-bar title-bar">
+        <div class="title-bar__title" style="font-size: 12px;">mysql</div>
+      </div>
+      
+      <div class="sidebar--secondary hidden-s hidden-xs">
+        <h4>Table of contents</h4>
+        <ul>
+        
+          
+            
+                <li><a class="a" href="#mysql-ip">mysql 查连接 IP</a></li>
+                
+            
+                <li><a class="a" href="#mysql_1">mysql 查最大数量表</a></li>
+                
+            
+                <li><a class="a" href="#user">查询 user 字段在哪个库哪个表</a></li>
+                
+            
+                <li><a class="a" href="#_1">统计访问过的表次数</a></li>
+                
+            
+                <li><a class="a" href="#_2">查看写入权限</a></li>
+                
+            
+                <li><a class="a" href="#sql">不登录执行 sql</a></li>
+                
+            
+                <li><a class="a" href="#_3">基础命令</a></li>
+                
+            
+          
+        
+        </ul>
+      </div>
+      
+      <div class="container content-block">
+        <div class="kpn-style">
+          <div class="card">
+            <div class="card__body">
+
+              
+              <h1 id="mysql">mysql</h1>
+<h2 id="mysql-ip">mysql 查连接 IP</h2>
+<pre><code>SELECT * FROM performance_schema.hosts;
+show full processlist;
+</code></pre>
+<h2 id="mysql_1">mysql 查最大数量表</h2>
+<pre><code>select table_name,table_rows,table_schema,table_comment from  information_schema.tables order by table_rows desc;
+</code></pre>
+<h2 id="user">查询 user 字段在哪个库哪个表</h2>
+<pre><code class="language-sql">SELECT 
+    TABLE_SCHEMA AS database_name,
+    TABLE_NAME AS table_name,
+    COLUMN_NAME AS column_name
+FROM 
+    INFORMATION_SCHEMA.COLUMNS
+WHERE 
+    COLUMN_NAME LIKE '%user%';
+</code></pre>
+<h2 id="_1">统计访问过的表次数</h2>
+<pre><code>//库名,表名,访问次数
+select table_schema,table_name,sum(io_read_requests+io_write_requests) io from sys.schema_table_statistics group by table_schema,table_name order by io desc; 
+</code></pre>
+<h2 id="_2">查看写入权限</h2>
+<pre><code>mysql&gt; show global variables like '%secure%';
++------------------+-------+
+| Variable_name    | Value |
++------------------+-------+
+| secure_auth      | ON    |
+| secure_file_priv |          |    可写入
+| secure_file_priv | NULL |   不可写入
++------------------+-------+
+</code></pre>
+<pre><code>SHOW VARIABLES LIKE &quot;secure_file_priv&quot;;
+</code></pre>
+<ul>
+<li>NULL，表示禁止。</li>
+<li>如果value值有文件夹目录，则表示只允许该目录下文件，测试子目录也不行。</li>
+<li>如果为空，则表示不限制目录。</li>
+</ul>
+<h2 id="sql">不登录执行 sql</h2>
+<pre><code>mysql -uaHmin -proot test -e &quot;select now()&quot; -N &gt;H:/work/target1.txt
+mysql -uroot -e &quot;show databases;&quot; &gt;1.txt
+</code></pre>
+<h2 id="_3">基础命令</h2>
+<pre><code>显示版本: select version();
+显示字符集: select @@character_set_database;
+显示数据库: show databases;
+显示表名: show tables;
+显示字段: show columns from table_name;
+显示计算机名: select @@hostname;
+系统版本: select @@version_compile_os;
+mysql路径: select @@basedir;
+数据库路径: select @@datadir;
+describe describe table_name;
+显示root密码: select User,Password from mysql.user;
+导入文件: select load_fie(0x633A5C5C77696E646F77735C73797374656D33325C5C696E65747372765C5C6D657461626173652E786D6C);
+导出文件: select 'testtest' into outfile '/var/www/html/test.txt' from mysql.user;
+开启外连: GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'root' WITH GRANT OPTION;
+mysql安装路径: show variables;   
+更新数据库: UPDATE `DX15`.`dx15_common_member` SET `uid` = '1' WHERE `dx15_common_member`.`uid` =40407;更新40407uid变成uid1
+mysql更改root密码: mysqladmin -u root password &quot;newpwd&quot;;
+查询表: select concat(User,0x3a,Password) from mysql.user; 
+获取数据库所有表: SHOW TABLES FROM `databases`;
+获取列前20行: SELECT * FROM `admin_bbs` ORDER BY 1 DESC LIMIT 0,20;
+获取表行数: SELECT COUNT(*) AS CNT FROM `dede_admin`;
+</code></pre>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__body">
+        
+        <div class="row">
+          <div class="col col--s-4 col--m-3 col--l-2">
+          </div>
+          <div class="col col--s-4 col--m space-between">
+            
+              <a class="footer__link padding-top-0 navigation-prev"
+                href="../Oracle/"
+                title="oracle">
+                &#8592; Previous Page
+              </a>
+            
+            
+            
+              <a class="footer__link padding-top-0 navigation-next"
+                href="../postgresql/"
+                title="postgresql"/>
+                Next Page &#8594;
+              </a>
+            
+          </div>
+          <div class="col col--s-4 col--m-3 ">
+          </div>
+        </div>
+        
+      </div>
+    </footer>
+  </div>
+
+
+  <!--
+  MkDocs version      : 1.5.3
+  Docs Build Date UTC : 2024-07-09 15:06:35.706468+00:00
+  -->
+
+  <!--
+    To include static assets from our theme, just add
+    ../.. beforehand which will be the relative path to
+    the root of the documentation.
+  -->
+  <script src="../../js/highlight.min.js"></script>
+  <script src="../../js/languages/groovy.min.js"></script>
+  <script src="../../js/languages/asciidoc.min.js"></script>
+  <script src="../../js/languages/nix.min.js"></script>
+
+  <script>
+    hljs.highlightAll();
+  </script>
+  <script async src="../../js/detail.js"></script>
+  <!--
+    extra_javascript contains paths to JavaScript files in the
+    users documentation directory or a list of JavaScript files
+    defined in their mkdocs.yml.
+
+    http://www.mkdocs.org/user-guide/configuration/#extra_javascript
+  -->
+  
+    <script src="../../search/main.js"></script>
+  
+
+
+  <script>
+  function getMermaidTheme() {
+    if (document.getElementById("dark-mode").checked) {
+      return 'dark'
+    }
+    return 'forest'
+  }
+
+  function initMermaid() {
+    mermaid.initialize({
+      theme: getMermaidTheme(),
+      logLevel: 1,
+    });
+  }
+  var mermaidClass = document.getElementsByClassName('mermaid');
+  if (mermaidClass.length > 0) {
+
+    var mermaidScript = document.createElement('script');
+    mermaidScript.setAttribute("src", "../../js/mermaid.min.js");
+    mermaidScript.setAttribute("async", "false");
+    mermaidScript.setAttribute("type", "text/javascript");
+    mermaidScript.onload = initMermaid;
+    document.body.appendChild(mermaidScript)
+
+  }
+  </script>
+
+</div>
+</body>
+</html>

