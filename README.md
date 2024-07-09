@@ -15,16 +15,16 @@
 
 ## 目录
 
-- [Linux 命令速查](blob/main/Linux%20命令速查.md)
-- [Windows 命令速查](blob/main/Windows%20命令速查.md)
+- [Linux 命令速查](Linux%20命令速查.md)
+- [Windows 命令速查](Windows%20命令速查.md)
 - Tools 命令速查
-    - [mimikatz](blob/main/工具使用命令速查/mimikatz.md)
+    - [mimikatz](工具使用命令速查/mimikatz.md)
     - cobaltstrike
 - 数据库命令速查
-    - [mysql](blob/main/数据库命令速查/mysql.md)
+    - [mysql](数据库命令速查/mysql.md)
     - sql server
-    - [oracle](blob/main/数据库命令速查/Oracle.md)
-    - [postgresql](blob/main/数据库命令速查/postgresql.md)
+    - [oracle](数据库命令速查/Oracle.md)
+    - [postgresql](数据库命令速查/postgresql.md)
     - elasticsearch
 
 ## 本地部署
