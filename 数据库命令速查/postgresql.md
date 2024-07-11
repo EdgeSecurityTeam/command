@@ -191,3 +191,5 @@ SELECT CHR(65)||CHR(66)||CHR(67);
 SELECT $$This is a string$$
 SELECT $TAG$This is another string$TAG$
 ```
+
+> 注：大部分内容翻译至：[https://github.com/swisskyrepo/PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings)

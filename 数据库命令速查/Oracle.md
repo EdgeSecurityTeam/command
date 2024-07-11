@@ -1,5 +1,9 @@
 # oracle
 
+相关工具：
+
+- [MDUT](https://github.com/SafeGroceryStore/MDUT)
+
 ## oracle查最大数量表
 
 ```sql
@@ -199,6 +203,8 @@ SELECT PwnUtilFunc('ping -c 4 localhost') FROM dual;
 ```
 
 ## References
+
+> 注：大部分内容翻译至：[https://github.com/swisskyrepo/PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings)
 
 * [NetSpi - SQL Wiki](https://sqlwiki.netspi.com/injectionTypes/errorBased/#oracle)
 * [ASDC12 - New and Improved Hacking Oracle From Web - OWASP](https://owasp.org/www-pdf-archive/ASDC12-New_and_Improved_Hacking_Oracle_From_Web.pdf)

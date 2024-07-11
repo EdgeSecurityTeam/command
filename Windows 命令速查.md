@@ -55,6 +55,12 @@ C:\Windows\System32\inetsrv\config\applicationHost.config
 %SystemRoot%\System32\inetsrv\config\applicationHost.config
 ```
 
+## 查看 Windows 系统版本：
+
+```
+wmic os get Caption,osarchitecture
+```
+
 ## 修改文件时间
 
 ```
@@ -157,8 +163,13 @@ powershell -ExecutionPolicy Bypass Add-MpPreference -ExclusionPath "C:\test"
 ## 文件写入
 
 ```
-echo test > C:\test.txt
-set /p=test<nul>C:\test.txt
+echo test > C:\test.txt //写入-覆盖
+echo test >> c:\test.txt //追加有换行
+set /p=test<nul>C:\test.txt //写入
+set /p="121d2">>C:\test.txt //不换行追加
+
+//powershell不换行追加
+powershell -Command "[System.IO.File]::AppendAllText('C:\windows\temp\111.txt', 'test')"
 
 //规避空格
 echo.123>>a.txt
@@ -189,6 +200,8 @@ REG query "HKLM\System\CurrentControlSet\Control\Lsa" | findstr "DisableRestrict
 ```
 REG query "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" /v PortNumber
 ```
+
+> https://forum.ywhack.com/coding.php 端口查询
 
 ### 开启远程桌面
 

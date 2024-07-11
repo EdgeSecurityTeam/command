@@ -189,6 +189,30 @@
 
 
         
+            <!--
+
+-->
+
+<li>
+  <a href="../../%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/proxy/" class="side-bar__link ">
+    proxy tools
+  </a>
+</li>
+
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/%E5%90%8E%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E5%88%97%E8%A1%A8/" class="side-bar__link ">
+    后渗透工具列表
+  </a>
+</li>
+
+
+        
     </ul>
   </li>
 
@@ -223,6 +247,18 @@
 <li>
   <a href="../mysql/" class="side-bar__link ">
     mysql
+  </a>
+</li>
+
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../myssql/" class="side-bar__link ">
+    sql server
   </a>
 </li>
 
@@ -324,6 +360,10 @@
 
               
               <h1 id="oracle">oracle</h1>
+<p>相关工具：</p>
+<ul>
+<li><a href="https://github.com/SafeGroceryStore/MDUT">MDUT</a></li>
+</ul>
 <h2 id="oracle_1">oracle查最大数量表</h2>
 <pre><code class="language-sql">select t.table_name,t.tablespace_name,t.owner,t.num_rows from  all_tables t  ORDER BY NUM_ROWS DESC;
 
@@ -560,6 +600,9 @@ EXECUTE IMMEDIATE utl_raw.cast_to_varchar2(hextoraw(''637265617465206f7220726570
 SELECT PwnUtilFunc('ping -c 4 localhost') FROM dual;
 </code></pre>
 <h2 id="references">References</h2>
+<blockquote>
+<p>注：大部分内容翻译至：<a href="https://github.com/swisskyrepo/PayloadsAllTheThings">https://github.com/swisskyrepo/PayloadsAllTheThings</a></p>
+</blockquote>
 <ul>
 <li><a href="https://sqlwiki.netspi.com/injectionTypes/errorBased/#oracle">NetSpi - SQL Wiki</a></li>
 <li><a href="https://owasp.org/www-pdf-archive/ASDC12-New_and_Improved_Hacking_Oracle_From_Web.pdf">ASDC12 - New and Improved Hacking Oracle From Web - OWASP</a></li>
@@ -586,8 +629,8 @@ SELECT PwnUtilFunc('ping -c 4 localhost') FROM dual;
           <div class="col col--s-4 col--m space-between">
             
               <a class="footer__link padding-top-0 navigation-prev"
-                href="../../%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/mimikatz/"
-                title="mimikatz">
+                href="../../%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/%E5%90%8E%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E5%88%97%E8%A1%A8/"
+                title="后渗透工具列表">
                 &#8592; Previous Page
               </a>
             
@@ -611,7 +654,7 @@ SELECT PwnUtilFunc('ping -c 4 localhost') FROM dual;
 
   <!--
   MkDocs version      : 1.5.3
-  Docs Build Date UTC : 2024-07-09 15:06:35.703781+00:00
+  Docs Build Date UTC : 2024-07-11 13:53:22.954520+00:00
   -->
 
   <!--
@@ -666,7 +709,16 @@ SELECT PwnUtilFunc('ping -c 4 localhost') FROM dual;
 
   }
   </script>
-
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?6c97fbf63dd98317dba802ddddaad905";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+  
 </div>
 </body>
 </html>

